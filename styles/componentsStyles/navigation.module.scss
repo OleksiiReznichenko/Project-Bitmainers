@@ -1,0 +1,106 @@
+@import '../mixins.scss';
+
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+
+    .inner-container {
+        @include width-restriction;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 1.25rem;
+
+        .left {
+            display: flex;
+            align-items: center;
+
+            .toggle-menu-button {
+                position: relative;
+                height: 18px;
+                width: 22px;
+                margin-right: 18px;
+    
+                .line {
+                    position: absolute;
+                    left: 0;
+                    height: 2px;
+                    width: 100%;
+                    background-color: var(--color-white);
+                    transition: all .3s;
+    
+                    &-1 {
+                        top: 0;
+                    }
+    
+                    &-2 {
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }   
+    
+                    &-3 {
+                        bottom: 0;
+                    }
+                }
+    
+                &.active {
+    
+                    .line {
+    
+                        &-1 {
+                            transform: rotate(-45deg);
+                            transform-origin: right;
+                        }
+    
+                        &-2 {
+                            opacity: 0;
+                        }   
+    
+                        &-3 {
+                            transform: rotate(45deg);
+                            transform-origin: right;
+                        }
+                    }
+                }
+            }
+
+            .logo-link {
+                width: 10rem;
+                margin-right: 8rem;
+
+                @media only screen and (max-width: 850px) {
+                    margin-bottom: -.5rem;
+                    width: 100px;
+                }
+
+                .logo {
+                    width: 100%;
+                }
+            }
+
+            .list {
+                display: flex;
+                align-items: center;
+
+                .item {
+
+                    &:not(:last-of-type) {
+                        margin-right: 2.6rem;
+                    }
+
+                    .link {
+                        font-weight: 900;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            opacity: .75;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

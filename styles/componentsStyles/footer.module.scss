@@ -1,0 +1,171 @@
+@import '../mixins.scss';
+
+.footer {
+    position: relative;
+    width: 100%;
+    z-index: 1000;
+    border-top: .2rem solid #353535;
+
+    .inner-container {
+        @include width-restriction;
+        display: flex;
+        // align-items: center;
+        justify-content: space-between;
+        padding: 6rem 0;
+
+        @media only screen and (max-width: 850px) {
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        .rights-reserved {
+            font-size: 1rem;
+            color: #959096;
+
+            @media only screen and (max-width: 850px) {
+                font-size: 12px;
+                margin-bottom: 32px;
+            }
+        }
+
+        .logo-link {
+            margin-bottom: 4.7rem;
+
+            @media only screen and (max-width: 850px) {
+                margin-bottom: 16px;
+            }
+
+            .logo {
+                width: 10rem;
+
+                @media only screen and (max-width: 850px) {
+                    width: 120px;
+                }
+            }
+        }
+
+        .center {
+
+            @media only screen and (max-width: 850px) {
+                padding-bottom: 22px;
+            }
+
+
+            .list {
+                display: flex;
+
+                @media only screen and (max-width: 850px) {
+                    justify-content: center;
+                }
+
+                @media only screen and (max-width: 500px) {
+                    flex-direction: column;
+                }
+
+                .item {
+
+                    &:not(:last-of-type) {
+                        margin-right: 4.2rem;
+
+                        @media only screen and (max-width: 850px) {
+                            margin-right: 40px;
+                        }
+
+                        @media only screen and (max-width: 500px) {
+                            margin-right: 0;
+                            margin-bottom: 24px;
+                        }
+                    }
+
+
+                    a {
+                        font-weight: 900;
+                        font-size: 1.8rem;
+                        text-transform: uppercase;
+
+                        @media only screen and (max-width: 850px) {
+                            font-size: 20px;
+                        }
+
+                        &:hover {
+                            opacity: .75;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            @media only screen and (max-width: 850px) {
+                align-items: center;
+                padding-top: 22px;
+                border-top: 1px solid #16181A;
+            }
+
+            .list-socials {
+                display: flex;
+                margin-bottom: 4.3rem;
+
+                .item-social {
+                    width: 4.3rem;
+                    height: 4.3rem;
+                    border-radius: .4rem;
+
+                    @media only screen and (max-width: 850px) {
+                        width: 35px;
+                        height: 35px;
+                    }
+
+                    &:not(:last-of-type) {
+                        margin-right: 2.15rem;
+                    }
+
+                    &__link {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        @include flex-center;
+
+                        &:hover .item-social__background {
+                            // transform: scale(1.1);
+                            opacity: .7;
+                        }
+                    }
+
+                    &__background {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        width: 100%;
+                        height: 100%;
+                        transition: all .3s;
+                    }
+
+                    &__icon {
+                        position: relative;
+                        z-index: 100;
+                        // height: 2.15rem;
+                        height: 50%;
+                        filter: drop-shadow(0px 0px 1.7rem rgba(240, 172, 29, 0.5));
+                    }
+                }
+            }
+
+            .heavens-link {
+                
+                .heavens-logo {
+                    width: 25rem;
+
+                    @media only screen and (max-width: 850px) {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+}

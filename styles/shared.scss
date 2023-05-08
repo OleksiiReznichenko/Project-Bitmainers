@@ -1,0 +1,55 @@
+@import 'mixins.scss';
+
+.desktop {
+    @media only screen and (max-width: 850px) {
+        display: none !important;
+    }
+}
+  
+.mobile {
+    @media only screen and (min-width: 850px) {
+        display: none !important;
+    }
+}
+  
+.closed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none !important;
+}
+  
+.section,
+.section-abs {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  
+    .inner-container {
+        height: 100%;
+        position: relative;
+    }
+}
+  
+.dropdown {
+    transition: all .3s;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    z-index: 150000;
+}
+
+.btn-yellow {
+    font-weight: 900;
+    color: var(--color-black);
+    text-transform: uppercase;
+    padding: 1rem 3rem;
+    background-color: var(--color-orange);
+    border-radius: .2rem;
+    border-top: .3rem solid var(--color-white);
+
+    &:hover {
+        background-color: lighten(#F0AC1D, 18%);
+    }
+
+    @media only screen and (max-width: 850px) {
+        font-size: 16px;
+    }
+}

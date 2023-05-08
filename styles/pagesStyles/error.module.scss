@@ -1,0 +1,136 @@
+.page-error {
+    height: var(--app-height);
+    overflow: hidden;
+    position: relative;
+
+    .info {
+        position: absolute;
+        top: 50%;
+        left: 9%;
+        transform: translateY(-50%);
+        z-index: 120;
+        width: 48rem;
+
+        @media only screen and (max-width: 850px) {
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            text-align: center;
+        }
+
+        .title {
+            font-weight: 900;
+            line-height: .95;
+            margin-bottom: 2.3rem;
+
+            .yellow {
+                color: var(--color-yellow);
+                font-size: 11rem;
+
+                @media only screen and (max-width: 850px) {
+                    font-size: 76px;
+                }
+            }
+
+            .white {
+                font-size: 9.6rem;
+
+                @media only screen and (max-width: 850px) {
+                    font-size: 66px;
+                }
+            }
+
+            .white-small {
+                font-size: 8.4rem;
+
+                @media only screen and (max-width: 850px) {
+                    font-size: 52px;
+                }
+            }
+        }
+
+        .paragraph {
+            font-size: 2.8rem;
+            width: 39rem;
+            margin-bottom: 5rem !important;
+
+            @media only screen and (max-width: 850px) {
+                font-size: 16px;
+                width: 230px;
+                margin: 0 auto;
+            }
+        }
+
+        .button {
+
+            @media only screen and (max-width: 850px) {
+                padding: 10px 52px;
+            }
+        }
+    }
+
+    .character-container {
+        position: absolute;
+        bottom: 4%;
+        right: 24%;
+        width: 33rem;
+        height: 45rem;
+        z-index: 50;
+
+        @media only screen and (min-width: 2200px) {
+            width: calc(33rem * 1.1);
+            height: calc(45rem * 1.1);
+            bottom: 5rem;
+        }
+
+        @media only screen and (max-width: 850px) {
+            width: calc(33rem * .8);
+            height: calc(45rem * .8);
+            right: auto;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .grass-container {
+        position: absolute;
+        bottom: -4rem;
+        left: -13%;
+        width: 120%;
+        height: 24rem;
+        z-index: 100;
+
+        @media only screen and (min-width: 2200px) {
+            height: 30rem;
+        }
+
+        @media only screen and (max-width: 1500px) {
+            width: 140%;
+            left: -27%;
+        }
+
+        @media only screen and (max-width: 850px) {
+            width: 200%;
+            left: -45%;
+            bottom: -3rem;
+        }
+
+        .grass {
+            width: 100%;
+        }
+    }
+
+    .background-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        .background {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

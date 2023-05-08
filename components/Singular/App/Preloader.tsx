@@ -1,0 +1,54 @@
+import classes from '@/styles/componentsStyles/preloader.module.scss';
+import { gsap } from 'gsap';
+import { useEffect, useState } from 'react';
+
+
+export default function Preloader() {
+    const preloaderTimeline = gsap.timeline({});
+    const [percent, setPercent] = useState<number>(0);
+
+    // END PRELOADER ANIMATION AND CLOSE IT
+    const initAnimation = (): void => {
+        const vh = window.innerHeight / 100;
+        const vw = window.innerWidth / 100;
+    
+        preloaderTimeline
+        // .from('.preloader .face', {duration: 1.25, opacity: .5, height: '60rem', y: '50rem'}, 0)
+        // .to('.preloader-1', {duration: .5, delay: 1.5, autoAlpha: 0}, 0)
+        .to(`.${classes['line-to-top']}`, {duration: .1, delay: 1, height: '50%'}, 0)
+        .to(`.${classes['line-to-right']}`, {duration: .1, delay: 1, width: '50%'}, 0)
+        .to(`.${classes.percent}`, {duration: .1, delay: 2.2, color: '#FFC700'}, 0)
+        .to(`.${classes.line}`, {duration: .1, delay: 2.2, backgroundColor: '#FFC700'}, 0)
+        .to(`.${classes['line-to-top']}`, {duration: .1, delay: 2.2, height: '100%'}, 0)
+        .to(`.${classes['line-to-right']}`, {duration: .1, delay: 2.2, width: '100%'}, 0)
+        .to(`.${classes.preloader}`, {duration: .5, delay: 3, autoAlpha: 0}, 0)
+        .to("html", { duration: 0, overflowY: "visible", delay: 3 }, 0);
+    };
+
+    useEffect(() => {
+        const html = document.querySelector('html')!;
+        html.style.overflowY = 'hidden';
+        initAnimation();
+
+        setTimeout(() => {
+            setPercent(50);
+        }, 1000);
+
+        setTimeout(() => {
+            setPercent(100);
+        }, 2200);
+    }, []);
+
+
+    return (
+        <div className={classes.preloader}>
+            <div className={classes['inner-container']}>
+                <div className={classes.percent}>{percent}%</div>
+                <div className={classes.lines}>
+                    <div className={classes.line + ' ' + classes['line-to-top']}></div>
+                    <div className={classes.line + ' ' + classes['line-to-right']}></div>
+                </div>
+            </div>
+        </div>
+    )
+}

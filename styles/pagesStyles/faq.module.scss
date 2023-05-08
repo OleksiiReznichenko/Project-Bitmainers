@@ -1,0 +1,234 @@
+@import '../mixins.scss';
+
+.page-faq {
+    min-height: 100vh;
+    position: relative;
+
+    .inner-container {
+        @include width-restriction;
+        padding-top: 10rem;
+        display: flex;
+        padding-bottom: 12.5rem;
+
+        @media only screen and (max-width: 850px) {
+            display: block;
+        }
+
+        .left {
+            min-width: 25rem;
+            width: 25rem;
+            // padding-right: 7rem;
+
+            @media only screen and (max-width: 850px) {
+                margin-bottom: 40px;
+                width: auto;
+            }
+
+            .subtitle {
+                font-weight: 900;
+                font-size: 2.7rem;
+                display: inline-block;
+                margin-bottom: 2.2rem;
+
+                @media only screen and (max-width: 850px) {
+                    font-size: 22px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .list-sections {
+
+                
+                .item {
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 1.3rem;
+                    }
+
+
+                    .button-section {
+                        
+
+                        &:not(.active):hover {
+
+                            span {
+                                color: darken(white, 25%);
+                            }
+                        }
+
+                        .check-mark {
+                            display: none;
+                            margin-right: .85rem;
+                            background-color: var(--color-yellow);
+                            height: .45rem;
+                            width: .95rem;
+                            border-radius: 1px;
+                        }
+
+                        span {
+                            font-weight: 500;
+                            color: #5F5F62;
+                            transition: all .3s;
+
+                            @media only screen and (max-width: 850px) {
+                                font-size: 16px;
+                            }
+                        }
+
+                        &.active {
+                            display: flex;
+                            align-items: center;
+
+                            .check-mark {
+                                display: block;
+                            }
+
+                            span {
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 89rem;
+            max-width: 75%;
+
+            @media only screen and (max-width: 850px) {
+                width: 100%;
+                max-width: none;
+            }
+
+            .title {
+                display: flex;
+                align-items: center;
+                font-size: 5.4rem;
+                font-weight: 800;
+                margin-bottom: 3.1rem;
+
+                @media only screen and (max-width: 850px) {
+                    font-size: 31px;
+                }
+
+                @media only screen and (max-width: 450px) {
+                    font-size: 25px;
+                }
+
+                .yellow {
+                    display: inline-block;
+                    // align-items: center;
+                    margin-left: 2.5rem;
+                    position: relative;
+                    padding: 0 2.6rem 0 1.4rem;
+                    color: var(--color-yellow);
+
+                    @media only screen and (max-width: 850px) {
+                        margin-left: 10px;
+                        padding: 0 14px 0 9px;
+                    }
+
+                    .parenthesis {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        // width: 4.5rem;
+                        width: 5rem;
+
+                        @media only screen and (max-width: 850px) {
+                            width: 28px;
+                        }
+
+                        &-left {
+                            left: 0;
+                        }
+
+                        &-right {
+                            right: 0;
+                        }
+                    }
+                }
+            }
+
+            .questions {
+                width: 100%;
+                
+                .question {
+                    width: 100%;
+                    margin-bottom: 1.25rem;
+                    cursor: pointer;
+                    border-top-left-radius: .5rem;
+                    border-top-right-radius: .5rem;
+                    transition: all .3s;
+                    border-bottom: .5px solid #353535;
+
+                    @media only screen and (max-width: 850px) {
+                        margin-bottom: 12px;
+                    }
+
+                    &:hover {
+                        background-color: rgba(white, .05);
+                    }
+
+                    .title-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 1.75rem 1rem 1.75rem 0;
+                        // cursor: pointer;
+
+                        @media only screen and (max-width: 850px) {
+                            padding: 20px 10px 20px 0;
+                        }
+
+                        .title-question {
+                            font-weight: 500;
+                            font-size: 2.1rem;
+
+                            @media only screen and (max-width: 850px) {
+                                font-size: 17px;
+                            }
+                        }
+
+                        .arrow {
+                            width: 1.2rem;
+                            transition: all .5s;
+
+                            @media only screen and (max-width: 850px) {
+                                width: 11px;
+                            }
+                                
+                            path {
+                                transition: all .5s;
+                            }
+
+                            &.arrow-active {
+                                transform: rotate(-90deg);
+                                
+                                path {
+                                    fill: var(--color-yellow);
+                                }
+                            }
+                        }
+                    }
+
+                    .description-container {
+                        display: none;
+
+                        .answer {
+                            max-width: 80%;
+                            padding-bottom: 1.75rem;
+
+                            @media only screen and (max-width: 850px) {
+                                font-size: 14px;
+                                max-width: 90%;
+                                padding-bottom: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
