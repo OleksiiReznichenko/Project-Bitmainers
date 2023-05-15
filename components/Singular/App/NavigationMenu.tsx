@@ -6,7 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function NavigationMenu() {
-    const dispatch = useDispatch();
     const mobileNavOpenedIndicator = useSelector(selectMobileNavOpenedIndicator);
     // const counter2 = useSelector((state: any) => state.counter.counter);
 

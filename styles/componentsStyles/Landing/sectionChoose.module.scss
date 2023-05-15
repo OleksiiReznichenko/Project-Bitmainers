@@ -7,14 +7,54 @@
     z-index: 1000;
     background-color: #000;
 
-    .character-boxes {
-        display: flex;
+    .scale-container {
+        position: relative;
+        width: 100%;
         height: 100%;
+    }
+
+    .grabber {
+        position: absolute;
+        // top: -70rem;
+        // top: -70%;
+        top: calc(-172rem + 40%);
+        left: 49.5%;
+        transform: translateX(-50%);
+        width: 79rem;
+        z-index: 1000;
+
+        @media only screen and (max-width: 2150px) {
+            top: calc(-174rem + 40%);
+        }
+    }
+
+    .character-boxes {
+        // display: flex;
+        height: 100%;
+        width: calc(61rem * 3 + 3.4rem * 2);
+
+        @media only screen and (min-width: 2150px) {
+            width: 100vw;
+        }
+
+        @media only screen and (max-width: 1550px) {
+            width: calc(52rem * 3 + 3.4rem * 2);
+        }
+
+        @media only screen and (max-width: 1150px) {
+            width: calc(47rem * 3 + 3.4rem * 2);
+        }
+
+        @media only screen and (max-width: 1000px) {
+            width: calc(42rem * 3 + 3.4rem * 2);
+        }
 
         @media only screen and (max-width: 850px) {
             // flex-direction: column;
             display: block;
             width: 100%;
+            position: static;
+            height: calc(40vh + 55vh + 40vh - 14vh - 13vh);
         }
 
         .character-box {
@@ -25,6 +65,7 @@
             position: relative;
             overflow: hidden;
             cursor: pointer;
+            position: absolute;
 
             @media only screen and (max-width: 1550px) {
                 min-width: 52rem;
@@ -42,15 +83,16 @@
                 min-width: 100%;
                 width: 100%;
                 height: 40vh;
+                // position: relative;
             }
 
-            &:not(:last-of-type) {
-                margin-right: 3.4rem;
+            // &:not(:last-of-type) {
+            //     margin-right: 3.4rem;
 
-                @media only screen and (max-width: 850px) {
-                    margin-right: 0;
-                }
-            }
+            //     @media only screen and (max-width: 850px) {
+            //         margin-right: 0;
+            //     }
+            // }
 
             .character {
                 width: 61rem;
@@ -66,9 +108,24 @@
                 }
             }
 
+            .box-part-top {
+                @include abs-center;
+                width: 68rem;
+                transform: translate(-50%, calc(-50% - 13.5rem));
+                z-index: 100;
+            }
+
+            .box-part-bottom {
+                @include abs-center;
+                width: 68rem;
+                transform: translate(-50%, calc(-50% + 13.5rem));
+                z-index: 100;
+            }
+
             .info {
                 position: absolute;
                 z-index: 100;
+                width: 32rem;
 
                 @media only screen and (min-width: 850px) {
                     bottom: 2.2rem;
@@ -120,6 +177,36 @@
                 }
             }
 
+            .info-right {
+
+                @media only screen and (max-width: 850px) {
+                    right: 15%;
+                }
+
+                @media only screen and (max-width: 600px) {
+                    right: 10%;
+                }
+
+                @media only screen and (max-width: 450px) {
+                    right: 4rem;
+                }
+            }
+
+            .info-left {
+
+                @media only screen and (max-width: 850px) {
+                    left: 15%;
+                }
+
+                @media only screen and (max-width: 600px) {
+                    left: 10%;
+                }
+
+                @media only screen and (max-width: 450px) {
+                    left: 4rem;
+                }
+            }
+
             .black-layer {
                 position: absolute;
                 top: 0;
@@ -131,8 +218,11 @@
                 transition: all .3s;
             }
 
-            .shadow-bottom {
+            .shadow {
                 position: absolute;
+            }
+
+            .shadow-bottom {
                 bottom: -2rem;
                 left: 0;
                 width: 100%;
@@ -144,7 +234,6 @@
             }
 
             .shadow-bottom-2 {
-                position: absolute;
                 bottom: 8rem;
                 left: 50%;
                 transform: translateX(-50%);
@@ -157,31 +246,37 @@
             }
 
             .shadow-right {
-                position: absolute;
                 top: 50%;
                 right: -10px;
                 transform: translateY(-50%);
                 // width: 120px;
-                width: 34rem;
+                width: 38rem;
                 height: 100%;
                 // background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(#000000, .5) 65.1%);
                 background-image: linear-gradient(to left, rgba(69, 0, 12, 0.5), rgba(69, 0, 12, 0));
                 filter: blur(20px);
                 // z-index: 1;
+
+                @media only screen and (max-width: 450px) {
+                    width: 34rem;
+                }
             }
 
             .shadow-left {
-                position: absolute;
                 top: 50%;
                 left: -10px;
                 transform: translateY(-50%);
                 // width: 120px;
-                width: 34rem;
+                width: 38rem;
                 height: 100%;
                 // background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(#000000, .5) 65.1%);
                 background-image: linear-gradient(to right, rgba(69, 0, 12, 0.5), rgba(69, 0, 12, 0));
                 filter: blur(20px);
                 // z-index: 1;
+
+                @media only screen and (max-width: 450px) {
+                    width: 34rem;
+                }
             }
 
             .border {
@@ -221,15 +316,21 @@
             }
 
             .border {
-                opacity: 1 !important;
+                opacity: 1;
             }
         }
 
         .character-box-red {
             background-color: var(--color-red);
+            left: 0;
+
+            @media only screen and (min-width: 850px) {
+                bottom: 0;
+            }
 
             @media only screen and (max-width: 850px) {
                 height: 40vh;
+                top: 0;
                 clip-path: polygon(0 0, 100% 0, 100% 72%, 0% 100%);
             }
 
@@ -239,6 +340,14 @@
                 @media only screen and (max-width: 850px) {
                     transform: none;
                     bottom: -8rem;
+                    left: 0;
+                }
+
+                @media only screen and (max-width: 600px) {
+                    left: -4rem;
+                }
+
+                @media only screen and (max-width: 450px) {
                     left: -8rem;
                 }
             }
@@ -246,9 +355,8 @@
             .info {
 
                 @media only screen and (max-width: 850px) {
-                    right: 4rem;
+                    top: 38%;
                 }
-
 
                 .name {
                     color: var(--color-red);
@@ -258,12 +366,39 @@
 
         .character-box-yellow {
             background-color: var(--color-orange-2);
+            transform: translateX(calc(-50% + ((61rem * 3 + 3.4rem * 2 - 100vw) / 2)));
+
+            @media only screen and (min-width: 2150px) {
+                transform: translateX(-50.5%);
+            }
+
+            @media only screen and (max-width: 1550px) {
+                transform: translateX(calc(-50% + ((52rem * 3 + 3.4rem * 2 - 100vw) / 2)));
+            }
+    
+            @media only screen and (max-width: 1150px) {
+                transform: translateX(calc(-50% + ((47rem * 3 + 3.4rem * 2 - 100vw) / 2)));
+            }
+    
+            @media only screen and (max-width: 1000px) {
+                transform: translateX(calc(-50% + ((42rem * 3 + 3.4rem * 2 - 100vw) / 2)));
+            }
+
+            @media only screen and (min-width: 850px) {
+                bottom: 0;
+                // left: 50%;
+                // transform: translateX(-50%);
+                left: 50vw;
+            }
 
             @media only screen and (max-width: 850px) {
                 height: 55vh;
                 clip-path: polygon(0 25%, 100% 0, 100% 77%, 0% 100%);
-                margin-top: -14vh;
-                margin-bottom: -13vh;
+                // margin-top: -14vh;
+                // margin-bottom: -33vh;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
             }
 
             .character {
@@ -273,7 +408,13 @@
                 @media only screen and (max-width: 850px) {
                     transform: none;
                     // bottom: -4rem;
-                    bottom: -6rem;
+                    // bottom: -6rem;
+                    bottom: 1rem;
+                    right: -2rem;
+                    width: 40rem;
+                }
+
+                @media only screen and (max-width: 600px) {
                     right: -6rem;
                 }
             }
@@ -281,9 +422,8 @@
             .info {
 
                 @media only screen and (max-width: 850px) {
-                    left: 4rem;
+                    top: 60%;
                 }
-
 
                 .name {
                     color: var(--color-orange-2);
@@ -292,8 +432,9 @@
 
             .banana-1 {
                 position: absolute;
-                top: 10%;
+                top: 30%;
                 left: -2rem;
+                transform: rotate(20deg);
             }
 
             .banana-2 {
@@ -316,13 +457,19 @@
 
         .character-box-green {
             background-color: var(--color-green);
+            bottom: 0;
             // margin-left: -64rem;
             // z-index: 10000;
 
+            @media only screen and (min-width: 850px) {
+                right: 0;
+            }
+
             @media only screen and (max-width: 850px) {
-                height: 50vh;
+                height: 40vh;
                 clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
                 // margin-top: -14vh;
+                left: 0;
             }
 
             .character {
@@ -330,7 +477,16 @@
 
                 @media only screen and (max-width: 850px) {
                     transform: scaleX(-1);
-                    bottom: -8rem;
+                    bottom: -6rem;
+                    // bottom: 8rem;
+                    left: 0rem;
+                }
+
+                @media only screen and (max-width: 600px) {
+                    left: -4rem;
+                }
+
+                @media only screen and (max-width: 450px) {
                     left: -8rem;
                 }
             }
@@ -338,9 +494,8 @@
             .info {
 
                 @media only screen and (max-width: 850px) {
-                    right: 4rem;
+                    top: 50%;
                 }
-
 
                 .name {
                     color: var(--color-green);
