@@ -107,7 +107,9 @@ export default function SectionChoose() {
                 <img src="/static/img/LandingPage/SectionChoose/grabber.png" alt="" className={classes.grabber} />
                 <div onMouseOver={chooseCharacter} className={classes['character-boxes']} ref={characterBoxes}>
                     <div className={classes['character-box-red'] + ' ' + classes['character-box'] + ' red ' + (activeCharacter === 'red' ? classes.active : '')}>
-                        <img src="/static/img/LandingPage/SectionChoose/characterRed.png" alt="" className={classes.character} />
+                        <div className={classes['character-container']}>
+                            <img src="/static/img/LandingPage/SectionChoose/characterRed.png" alt="" className={classes.character} />
+                        </div>
                         <div className={classes.info + ' ' + classes['info-right']}>
                             <strong className={classes.name}>Devil</strong>
                             <div className={classes['flex-container']}>
@@ -126,7 +128,9 @@ export default function SectionChoose() {
                     </div>
                     <div className={classes['character-box-yellow'] + ' ' + classes['character-box'] + ' yellow ' + (activeCharacter === 'yellow' ? classes.active : '')}>
                         {/* <div className={classes['scale-container']}> */}
-                            <img src="/static/img/LandingPage/SectionChoose/characterYellow.png" alt="" className={classes.character} />
+                            <div className={classes['character-container']}>
+                                <img src="/static/img/LandingPage/SectionChoose/characterYellow.png" alt="" className={classes.character} />
+                            </div>
                             <img src="/static/img/LandingPage/SectionChoose/boxPartTop.png" alt="" className={classes['box-part-top']} />
                             <img src="/static/img/LandingPage/SectionChoose/boxPartBottom.png" alt="" className={classes['box-part-bottom']} />
                         {/* </div> */}
@@ -150,7 +154,9 @@ export default function SectionChoose() {
                         <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
                     </div>
                     <div className={classes['character-box-green'] + ' ' + classes['character-box'] + ' green ' + (activeCharacter === 'green' ? classes.active : '')}>
-                        <img src="/static/img/LandingPage/SectionChoose/characterGreen.png" alt="" className={classes.character} />
+                        <div className={classes['character-container']}>
+                            <img src="/static/img/LandingPage/SectionChoose/characterGreen.png" alt="" className={classes.character} />
+                        </div>
                         <div className={classes.info + ' ' + classes['info-right']}>
                             <strong className={classes.name}>Alien</strong>
                             <div className={classes['flex-container']}>

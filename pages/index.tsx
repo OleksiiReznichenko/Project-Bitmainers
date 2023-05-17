@@ -160,7 +160,7 @@ export default function Home() {
                 .to(`.${classesSectionChoose.border}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
                 .to(`.${classesSectionChoose.info}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
                 .to(`.${classesSectionChoose.shadow}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
-                .to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['character']}`, {duration: 1, scale: .35, y: '-50%', ease: 'linear'}, 'section-choose-animation-2')
+                .to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['character-container']}`, {duration: 1, scale: .35, y: '-50%', ease: 'linear'}, 'section-choose-animation-2')
                 .add('section-choose-animation-3')
                 .to(`.${classesSectionChoose['section-choose']}`, {duration: .8, backgroundColor: '#FFB23F', ease: 'linear'}, 'section-choose-animation-3-=.2')
                 .from(`.${classesSectionChoose['box-part-top']}`, {duration: .8, y: -120 * vh, x: 5 * vw, rotate: 7, ease: 'linear'}, 'section-choose-animation-3-=.2')
@@ -223,8 +223,8 @@ export default function Home() {
                 let XCharacterBox = 55 * baseFontSize;
                 let XCharacterBoxYellow = '-50%';
 
-                let ScaleSectionChooseScaleContainer = .2;
-                let ScaleSectionChooseScaleContainer2 = .5;
+                let ScaleSectionChooseScaleContainer = .5;
+                let ScaleSectionChooseScaleContainer2 = .6;
 
                 if (window.innerWidth < 700) {
                     XScaleContainer = 85 * vw;
@@ -268,19 +268,29 @@ export default function Home() {
                 // .from(`.${classesSectionChoose['section-choose']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
                 .from(`.${classesSectionChoose['section-choose']}`, {duration: 0, display: 'none', ease: 'linear'}, 'header-animation-4')
                 .from(`.${classesSectionChoose['section-choose']}`, {duration: 1, backgroundColor: 'transparent', ease: 'linear'}, 'header-animation-4')
-                .from(`.${classesSectionChoose['character-box-red']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
-                .from(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
-                .from(`.${classesSectionChoose['character-box-green']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
+                .from(`.${classesSectionChoose['character-boxes']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
+                // .from(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
+                // .from(`.${classesSectionChoose['character-box-green']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
                 .add('section-choose-animation')
-                .to(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, cursor: 'default', clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', height: 110 * vh, ease: 'linear'}, 'section-choose-animation')
+                .to(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, y: '-50%', cursor: 'default', clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', height: 110 * vh, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose['character-box-red']}`, {duration: 1, y: -35 * vh, opacity: 0, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose['character-box-green']}`, {duration: 1, y: 35 * vh, opacity: 0, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose['character-boxes']}`, {duration: .4, y: 0, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose['info-left']}`, {duration: .8, opacity: 0, x: -30 * vw, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose['info-right']}`, {duration: .8, opacity: 0, x: 30 * vw, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose.shadow}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation')
-                .add('section-choose-animation-2')
-                .to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['character']}`, {duration: 1, scale: .35, y: '-50%', ease: 'linear'}, 'section-choose-animation-2')
+                .fromTo(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['character']}`, 
+                {duration: 1, y: '10%', x: '40%', ease: 'linear'}, 
+                {duration: 1, scale: .5, y: 0, x: 0, ease: 'linear'}, 
+                'section-choose-animation')
+                .fromTo(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['character']}`, 
+                {duration: 1, y: '10%', x: '-40%', ease: 'linear'}, 
+                {duration: 1, scale: .5, y: 0, x: 0, ease: 'linear'}, 
+                'section-choose-animation')
+                .fromTo(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['character']}`, 
+                {duration: 1, y: '10%', x: '40%', ease: 'linear'}, 
+                {duration: 1, scale: .5, y: 0, x: 0, ease: 'linear'}, 
+                'section-choose-animation')
                 .add('section-choose-animation-3')
                 .to(`.${classesSectionChoose['section-choose']}`, {duration: .8, backgroundColor: '#FFB23F', ease: 'linear'}, 'section-choose-animation-3-=.2')
                 .from(`.${classesSectionChoose['box-part-top']}`, {duration: .8, y: -120 * vh, x: 5 * vw, rotate: 7, ease: 'linear'}, 'section-choose-animation-3-=.2')

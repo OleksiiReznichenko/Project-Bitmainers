@@ -26,6 +26,11 @@
         @media only screen and (max-width: 2150px) {
             top: calc(-174rem + 40%);
         }
+
+        @media only screen and (max-width: 850px) {
+            width: 69rem;
+            top: calc(-160rem + 52%);
+        }
     }
 
     .character-boxes {
@@ -94,7 +99,7 @@
             //     }
             // }
 
-            .character {
+            .character-container {
                 width: 61rem;
 
                 @media only screen and (min-width: 850px) {
@@ -106,6 +111,10 @@
                     position: absolute;
                     width: 36rem;
                 }
+
+                .character {
+                    width: 100%;
+                }
             }
 
             .box-part-top {
@@ -113,6 +122,11 @@
                 width: 68rem;
                 transform: translate(-50%, calc(-50% - 13.5rem));
                 z-index: 100;
+
+                @media only screen and (max-width: 850px) {
+                    width: 59rem;
+                    transform: translate(-49%, calc(-50% - 12rem));
+                }
             }
 
             .box-part-bottom {
@@ -120,6 +134,11 @@
                 width: 68rem;
                 transform: translate(-50%, calc(-50% + 13.5rem));
                 z-index: 100;
+
+                @media only screen and (max-width: 850px) {
+                    width: 59rem;
+                    transform: translate(-49%, calc(-50% + 12rem));
+                }
             }
 
             .info {
@@ -334,22 +353,23 @@
                 clip-path: polygon(0 0, 100% 0, 100% 72%, 0% 100%);
             }
 
-            .character {
+            .character-container {
                 transform: translate(-53%, -43%);
 
                 @media only screen and (max-width: 850px) {
-                    transform: none;
-                    bottom: -8rem;
-                    left: 0;
+                    transform: translate(-50%, 50%);
+                    // bottom: -8rem;
+                    bottom: 50%;
+                    left: 50%;
                 }
 
-                @media only screen and (max-width: 600px) {
-                    left: -4rem;
-                }
+                // @media only screen and (max-width: 600px) {
+                //     left: -4rem;
+                // }
 
-                @media only screen and (max-width: 450px) {
-                    left: -8rem;
-                }
+                // @media only screen and (max-width: 450px) {
+                //     left: -8rem;
+                // }
             }
 
             .info {
@@ -401,21 +421,21 @@
                 transform: translateY(-50%);
             }
 
-            .character {
+            .character-container {
                 transform: translate(-50%, -33%);
                 z-index: 10;
 
                 @media only screen and (max-width: 850px) {
-                    transform: none;
-                    // bottom: -4rem;
-                    // bottom: -6rem;
-                    bottom: 1rem;
-                    right: -2rem;
+                    transform: translate(50%, 50%);
+                    // bottom: 1rem;
+                    bottom: 50%;
+                    // right: -2rem;
+                    right: 50%;
                     width: 40rem;
                 }
 
                 @media only screen and (max-width: 600px) {
-                    right: -6rem;
+                    // right: -6rem;
                 }
             }
 
@@ -472,23 +492,23 @@
                 left: 0;
             }
 
-            .character {
+            .character-container {
                 transform: translate(-48%, -45%);
 
                 @media only screen and (max-width: 850px) {
-                    transform: scaleX(-1);
-                    bottom: -6rem;
-                    // bottom: 8rem;
-                    left: 0rem;
+                    transform: scaleX(-1) translate(50%, 50%);
+                    // bottom: -6rem;
+                    bottom: 50%;
+                    left: 50%;
                 }
 
-                @media only screen and (max-width: 600px) {
-                    left: -4rem;
-                }
+                // @media only screen and (max-width: 600px) {
+                //     left: -4rem;
+                // }
 
-                @media only screen and (max-width: 450px) {
-                    left: -8rem;
-                }
+                // @media only screen and (max-width: 450px) {
+                //     left: -8rem;
+                // }
             }
 
             .info {
