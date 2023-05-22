@@ -356,13 +356,13 @@ export default function Home() {
                 .from(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, scale: 0, y: 100 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -40 * vw, y: 80 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 40 * vw, y: -80 * vh, ease: 'linear'}, 'section-forest-animation-10')
-                .add('section-forest-animation-11')
-                .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, y: YAppearingInfo2Container - 4 * vh + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                .to(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, y: -100 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                .to(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -60 * vw, ease: 'linear'}, 'section-forest-animation-11')
-                .to(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 60 * vw, ease: 'linear'}, 'section-forest-animation-11')
+                // .add('section-forest-animation-11')
+                // .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, y: YAppearingInfo2Container - 4 * vh + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                // .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                // .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                // .to(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, y: -100 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                // .to(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -60 * vw, ease: 'linear'}, 'section-forest-animation-11')
+                // .to(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 60 * vw, ease: 'linear'}, 'section-forest-animation-11')
 
 
             } else {

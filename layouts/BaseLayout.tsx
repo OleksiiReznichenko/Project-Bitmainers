@@ -8,7 +8,7 @@ export default function BaseLayout(props: PropsWithChildren) {
     return (
         <>
             <div className="page">{props.children}</div>
-            {/* <Preloader/> */}
+            <Preloader/>
             <Navigation/>
             <NavigationMenu/>
         </>
