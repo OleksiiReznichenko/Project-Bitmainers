@@ -1,0 +1,14 @@
+<svg width="670" height="151" viewBox="0 0 670 151" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="670" height="150.593" rx="2.11506" fill="#FFC700"/>
+<path d="M665.779 146.326H4.26953L45.1307 124.377H629.335L665.779 146.326Z" fill="#BD8000"/>
+<path d="M3.3125 148.651V2.91602L41.5982 28.1767V123.39L3.3125 148.651Z" fill="#DC9603"/>
+<path d="M666.32 148.651V2.91602L628.035 28.1767V123.39L666.32 148.651Z" fill="#DC9603"/>
+<mask id="path-5-inside-1_2267_4846" fill="white">
+<rect x="37.5469" y="24.7754" width="594.901" height="101.043" rx="2.11506"/>
+</mask>
+<rect x="37.5469" y="24.7754" width="594.901" height="101.043" rx="2.11506" fill="#FFC700" stroke="#FFC343" stroke-width="8.46025" mask="url(#path-5-inside-1_2267_4846)"/>
+<line y1="-2.11506" x2="45.8683" y2="-2.11506" transform="matrix(-0.834689 -0.550722 0.834689 -0.550722 43.4375 25.2617)" stroke="#FFC343" stroke-width="4.23013"/>
+<line y1="-2.11506" x2="45.8683" y2="-2.11506" transform="matrix(0.834689 -0.550722 -0.834689 -0.550722 626.559 25.2617)" stroke="#FFC343" stroke-width="4.23013"/>
+<line y1="-2.11506" x2="45.8683" y2="-2.11506" transform="matrix(0.834689 0.550722 -0.834689 0.550722 626.559 125.33)" stroke="#FFC343" stroke-width="4.23013"/>
+<line y1="-2.11506" x2="45.8683" y2="-2.11506" transform="matrix(-0.834689 0.550722 0.834689 0.550722 43.4375 125.33)" stroke="#FFC343" stroke-width="4.23013"/>
+</svg>

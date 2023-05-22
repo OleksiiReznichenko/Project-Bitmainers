@@ -34,23 +34,37 @@ export default function SectionForest() {
                         fill
                         className={classes['trees-back']} />
                     </div>
-                    {/* <img src="/static/img/LandingPage/SectionForest/cristal.png" alt="" 
-                    className={classes.cristal} /> */}
                 </div>
-                {/* <div className={classes['grass-container']}>
-                    <img src="/static/img/LandingPage/SectionForest/grass.png" alt="" 
-                    className={classes.grass} />
-                </div> */}
-                {/* <div className={classes['miner-container']}>
-                    <img src="/static/img/LandingPage/SectionForest/characterMiner.png" alt="" 
-                    className={classes.miner} />
-                </div> */}
+            </div>
+            <div className={classes['outher-scale-container-2']}>
+                <div className={classes['scale-container-2']}>
+                    <div className={classes['trees-background-2']}>
+                        <div className={classes['trees-front-container']}>
+                            <Image src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
+                            // width={348}
+                            // height={448}
+                            fill
+                            className={classes['trees-front']} />
+                        </div>
+                        <div className={classes['trees-back-container']}>
+                            <Image src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
+                            // width={348}
+                            // height={448}
+                            fill
+                            className={classes['trees-back']} />
+                        </div>
+                    </div>
+                </div>
             </div>
             <div className={classes['miner-container']}>
                 <img src="/static/img/LandingPage/SectionForest/characterMiner.png" alt="" 
                 className={classes.miner} />
             </div>
             <div className={classes['grass-container']}>
+                <img src="/static/img/LandingPage/SectionForest/grass.png" alt="" 
+                className={classes.grass} />
+            </div>
+            <div className={classes['grass-container-2']}>
                 <img src="/static/img/LandingPage/SectionForest/grass.png" alt="" 
                 className={classes.grass} />
             </div>
@@ -62,6 +76,20 @@ export default function SectionForest() {
                 <img src="/static/img/LandingPage/SectionForest/tube.png" alt="" 
                 className={classes['main-tube']} />
             </div>
+            <div className={classes['tubes-container']}>
+                <div className={classes['tube-container'] + ' ' + classes['tube-container-1']}>
+                    <img src="/static/img/LandingPage/SectionForest/tube.png" alt="" className={classes.tube} />
+                    <img src="/static/img/LandingPage/SectionForest/tubeCharacter1.png" alt="" className={classes.character} />
+                </div>
+                <div className={classes['tube-container']}>
+                    <img src="/static/img/LandingPage/SectionForest/tube.png" alt="" className={classes.tube} />
+                    <img src="/static/img/LandingPage/SectionForest/tubeCharacter2.png" alt="" className={classes.character} />
+                </div>
+                <div className={classes['tube-container']}>
+                    <img src="/static/img/LandingPage/SectionForest/tube.png" alt="" className={classes.tube} />
+                    <img src="/static/img/LandingPage/SectionForest/tubeCharacter3.png" alt="" className={classes.character} />
+                </div>
+            </div>
             <div className={classes['appearing-info']}>
                 <h1 className={classes.title}>
                     <span className={classes.white}>Mine and </span>
@@ -72,6 +100,39 @@ export default function SectionForest() {
                     </span>
                 </h1>
                 <p className={classes.paragraph}>Decent rewards every day for our best players</p>
+            </div>
+            <div className={classes['appearing-info-2']}>
+                <div className={classes['appearing-info-2-container']}>
+                    <span className={classes.subtitle}>Easy to</span>
+                    <a href="#" className={classes['button-start']}>
+                        <img src="/static/svg/LandingPage/buttonBackground.svg" alt="" className={classes['button-background']} />
+                        <span>Start</span>
+                    </a>
+                </div>
+            </div>
+            <div className={classes['playing-machine-container']}>
+                <Image  src="/static/img/LandingPage/SectionRocks/playingMachine.png" alt="" 
+                // width={348}
+                // height={448}
+                fill
+                className={classes['playing-machine']}  />
+            </div>
+            <div className={classes['appearing-info-3']}>
+                <h1 className={classes.title}>
+                    <span className={classes.white}>New Generation </span>
+                    <span className={classes.yellow}>
+                        <img src="/static/svg/landingLeftParenthesis.svg" alt="" className={classes['parenthesis'] + ' ' + classes['parenthesis-left']} />
+                        NFT Game
+                        <img src="/static/svg/landingRightParenthesis.svg" alt="" className={classes['parenthesis'] + ' ' + classes['parenthesis-right']} />
+                    </span>
+                </h1>
+                <p className={classes.paragraph}>No stupid grind. Mere but exciting.</p>
+            </div>
+            <div className={classes['banana-fire-container-1']}>
+                <img src="/static/img/LandingPage/SectionRocks/bananaFire.png" alt="" className={classes['banana-fire']} />
+            </div>
+            <div className={classes['banana-fire-container-2']}>
+                <img src="/static/img/LandingPage/SectionRocks/bananaFire.png" alt="" className={classes['banana-fire']} />
             </div>
         </section>
     )

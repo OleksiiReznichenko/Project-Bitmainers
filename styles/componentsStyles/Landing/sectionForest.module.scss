@@ -7,10 +7,22 @@
     z-index: 900;
     background-color: #16181A;
 
-    .scale-container {
+    .scale-container,
+    .scale-container-2,
+    .outher-scale-container-2 {
         width: 100vw;
         height: 100vh;
         position: relative;
+        z-index: 10;
+    }
+    
+    .scale-container-2,
+    .outher-scale-container-2 {
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        @include abs-center;
+        z-index: 3;
     }
 
     .background-stars-container {
@@ -27,7 +39,8 @@
         }
     }
 
-    .trees-background {
+    .trees-background,
+    .trees-background-2 {
         height: 48vw;
         width: 160vw;
         position: absolute;
@@ -68,8 +81,16 @@
             }
         }
     }
+    
+    .trees-background-2 {
+        // position: fixed;
+        // overflow: hidden;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
-    .grass-container {
+    .grass-container,
+    .grass-container-2 {
         width: 155vw;
         position: absolute;
         left: -3vw;
@@ -80,6 +101,10 @@
         .grass {
             width: 100%;
         }
+    }
+    
+    .grass-container-2 {
+        left: -700px;
     }
 
     .miner-container {
@@ -105,13 +130,14 @@
         bottom: -12px;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 30;
 
         @media only screen and (max-width: 850px) {
             bottom: -4px;
         }
 
         .main-tube {
-            width: 31rem;
+            width: 30rem;
 
             @media only screen and (max-width: 850px) {
                 width: 230px;
@@ -125,6 +151,7 @@
         // left: 100vw;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 30;
         
         .crystal {
             width: 19rem;
@@ -235,5 +262,255 @@
                 width: 200px;
             }
         }
+    }
+
+    .appearing-info-2 {
+        @include abs-center;
+        z-index: 1400;
+        text-align: center;
+        width: 70rem;
+
+        .appearing-info-2-container {
+            width: 100%;
+            position: relative;
+        }
+
+        .subtitle {
+            font-weight: 900;
+            font-size: 9.8rem;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: .4rem;
+
+            @media only screen and (max-width: 850px) {
+                font-size: 56px;
+            }
+        }
+
+        .button-start {
+            position: relative;
+            // filter: drop-shadow(0px 2.5px 12px rgba(240, 172, 29, 0.7)) drop-shadow(0px 2.5px 61px rgba(255, 255, 255, 0.5));
+
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            &:hover .button-background {
+                filter: brightness(90%);
+            }
+
+            .button-background {
+                width: 55rem;
+                transition: all .3s;
+
+                @media only screen and (max-width: 850px) {
+                    width: 48rem;
+                }
+            }
+
+            span {
+                @include abs-center;
+                text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+                font-weight: 900;
+                font-size: 6.8rem;
+                text-transform: uppercase;
+
+                @media only screen and (max-width: 850px) {
+                    font-size: 38px;
+                }
+            }
+        }
+    }
+
+    .appearing-info-3 {
+        @include abs-center;
+        top: 32%;
+        z-index: 200;
+        text-align: center;
+        // width: 130rem;
+        width: 90vw;
+        z-index: 1;
+
+        @media only screen and (max-width: 850px) {
+            width: 400px;
+            top: 30%;
+        }
+
+        @media only screen and (max-width: 550px) {
+            top: 36%;
+        }
+
+        .title {
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
+            // font-size: 11.25rem;
+            font-weight: 900;
+            line-height: 1.15;
+            // font-size: 6.5vw;
+            margin-bottom: 1.75rem;
+
+            @media only screen and (max-width: 850px) {
+                display: inline-block;
+                margin-bottom: 9px;
+            }
+
+            .white {
+                // font-size: 10.5rem;
+                // font-size: 6.5vw;
+                font-size: 6vw;
+
+                @media only screen and (max-width: 850px) {
+                    font-size: 33px;
+                }
+            }
+
+            .yellow {
+                // font-size: 17rem;
+                // font-size: 10.5vw;
+                font-size: 9.6vw;
+                display: inline-block;
+                // align-items: center;
+                margin-left: 2.5rem;
+                position: relative;
+                padding: 0 4.2rem 0 3.5rem;
+                color: var(--color-yellow);
+
+                @media only screen and (max-width: 850px) {
+                    font-size: 50px;
+                    margin-left: 0;
+                    padding: 0 11px;
+                    margin-top: 10px;
+                }
+
+                .parenthesis {
+                    position: absolute;
+                    top: 53%;
+                    transform: translateY(-50%);
+                    // width: 4.5rem;
+                    width: 7.35rem;
+
+                    @media only screen and (max-width: 850px) {
+                        width: 24px;
+                    }
+
+                    &-left {
+                        left: -1rem;
+                    }
+
+                    &-right {
+                        right: -1rem;
+                    }
+                }
+            }
+        }
+
+        .paragraph {
+            font-size: 2rem;
+            margin: 0 auto;
+            text-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+
+            @media only screen and (max-width: 850px) {
+                font-size: 16px;
+            }
+
+            @media only screen and (max-width: 450px) {
+                font-size: 14px;
+                width: 200px;
+            }
+        }
+    }
+
+    .tubes-container {
+        position: absolute;
+        bottom: -13px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
+        padding: 0 5vw;
+        z-index: 150;
+
+        @media only screen and (max-width: 850px) {
+            bottom: -4px;
+            left: 0;
+            transform: none;
+            width: 1300px;
+        }
+
+        .tube-container,
+        .tube-container-1 {
+            position: relative;
+
+            .tube {
+                width: 29rem;
+    
+                @media only screen and (max-width: 850px) {
+                    width: 230px;
+                }
+            }
+
+            .character {
+                position: absolute;
+                right: 2rem;
+                bottom: 22rem;
+                height: 48rem;
+    
+                @media only screen and (max-width: 850px) {
+                    width: 210px;
+                }
+            }
+        }
+    }
+
+    .playing-machine-container {
+        @include abs-center;
+        top: 63%;
+        width: 44rem;
+        height: 86rem;
+        z-index: 1000;
+
+        .playing-machine {
+            width: 100%;
+        }
+    }
+
+    .banana-fire-container-1 {
+        position: absolute;
+        top: 13%;
+        left: -2rem;
+        width: 44rem;
+        filter: blur(4px) brightness(140%);
+        z-index: 400;
+        transform: rotate(-7deg);
+
+        @media only screen and (max-width: 1400px) {
+            width: 36rem;
+        }
+
+        @media only screen and (max-width: 850px) {
+            width: 21rem;
+            filter: blur(4px);
+            top: 10%;
+        }
+    }
+
+    .banana-fire-container-2 {
+        position: absolute;
+        bottom: 11%;
+        right: 5%;
+        width: 24rem;
+        z-index: 1400;
+
+        @media only screen and (max-width: 850px) {
+            bottom: 7%;
+            right: -6rem;
+            filter: brightness(70%);
+        }
+    }
+
+    .banana-fire {
+        width: 100%;
     }
 }
