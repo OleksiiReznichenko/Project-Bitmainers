@@ -22,7 +22,7 @@
 .section-abs {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: var(--app-height);
   
     .inner-container {
         height: 100%;

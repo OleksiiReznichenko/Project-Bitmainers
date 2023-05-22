@@ -4,7 +4,7 @@
 
 
     .animation-block {
-        height: 100vh;
+        height: var(--app-height);
         width: 100%;
         overflow: hidden;
     }
