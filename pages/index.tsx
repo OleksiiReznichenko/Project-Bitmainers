@@ -12,6 +12,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import SectionChoose from '@/components/Singular/Landing/SectionChoose';
 import SectionForest from '@/components/Singular/Landing/SectionForest';
 import SectionRocks from '@/components/Singular/Landing/SectionRocks';
+import Footer from '@/components/Singular/App/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +25,7 @@ export default function Home() {
     const initAnimation = (): void => {
         let windowWidth = window.innerWidth;
         let windowHeight = window.innerHeight;
-    
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // CSS UNITS IN PIXELS
         const baseFontSizeString = getComputedStyle(document.querySelector('html')!).fontSize;
@@ -39,14 +40,14 @@ export default function Home() {
     
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // TIMELINE END
-        let scrollTimelineEnd = 'top -780%';
+        let scrollTimelineEnd = 'top -1360%';
     
         if (navigator.userAgent.match(/firefox|fxios/i)) {
-            scrollTimelineEnd = 'top -780%';
+            scrollTimelineEnd = 'top -1700%';
         }
     
         if (window.outerWidth < 850 || isTouchDevice) {
-            scrollTimelineEnd = 'top -7000px';
+            scrollTimelineEnd = 'top -9300px';
         }
     
         let scrollTimelineTrigger = `.animation-block`;
@@ -81,6 +82,9 @@ export default function Home() {
                 
                 let XCharacterBox = 55 * baseFontSize;
                 let XCharacterBoxYellow = '-50%';
+                let XTranslateContainer1 = -120 * vw;
+                let XTranslateContainer2 = -230 * vw;
+                let XTranslateContainer3 = -240 * vw;
 
                 let ScaleSectionChooseScaleContainer = .2;
                 let ScaleSectionChooseScaleContainer2 = .5;
@@ -130,6 +134,9 @@ export default function Home() {
                 }
 
                 if (window.innerWidth < 1650) {
+                    XTranslateContainer1 = -1300 + -50 * vw;
+                    XTranslateContainer2 = -2800 + -50 * vw;
+                    XTranslateContainer3 = -3100 + -50 * vw;
 
                     if (window.innerHeight < 730) {
                         YAppearingInfo2Container = 48 * vh;
@@ -336,8 +343,6 @@ export default function Home() {
                 .to(`.${classesSectionForest['scale-container-2']}`, {duration: 0, overflow: 'hidden', maxWidth: 100 * vw, ease: 'linear'}, 'section-forest-animation-8')
                 .to(`.${classesSectionForest['scale-container-2']}`, {duration: 1, scale: 2.4, ease: 'linear'}, 'section-forest-animation-8')
                 .add('section-forest-animation-9')
-                // .from(`.${classesSectionRocks['section-rocks']}`, {duration: 0, display: 'none', ease: 'linear'}, 'section-forest-animation-9')
-                // .from(`.${classesSectionRocks['section-rocks']}`, {duration: .4, opacity: 0, ease: 'linear'}, 'section-forest-animation-9')
                 .from(`.${classesSectionForest['playing-machine-container']}`, {duration: 0, display: 'none', ease: 'linear'}, 'section-forest-animation-9')
                 .from(`.${classesSectionForest['playing-machine-container']}`, {duration: .4, opacity: 0, ease: 'linear'}, 'section-forest-animation-9')
                 .from(`.${classesSectionForest['playing-machine-container']}`, {duration: 1.2, scale: ScalePlayingMachineContainer, y: YPlayingMachineContainer, ease: 'linear'}, 'section-forest-animation-9-=.2')
@@ -356,13 +361,34 @@ export default function Home() {
                 .from(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, scale: 0, y: 100 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -40 * vw, y: 80 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 40 * vw, y: -80 * vh, ease: 'linear'}, 'section-forest-animation-10')
-                // .add('section-forest-animation-11')
-                // .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, y: YAppearingInfo2Container - 4 * vh + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, y: -100 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -60 * vw, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 60 * vw, ease: 'linear'}, 'section-forest-animation-11')
+                .add('section-forest-animation-11')
+                .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, y: YAppearingInfo2Container - 4 * vh + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, y: -100 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -60 * vw, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 60 * vw, ease: 'linear'}, 'section-forest-animation-11')
+                .add('section-rocks-animation-1')
+                .from(`.${classesSectionRocks['section-rocks']}`, {duration: 0, display: 'none', ease: 'linear'}, 'section-rocks-animation-1-=.7')
+                .from(`.${classesSectionRocks['section-rocks']}`, {duration: .4, opacity: 0, ease: 'linear'}, 'section-rocks-animation-1-=.7')
+                .from(`.${classesSectionRocks['roadmap-line']}`, {duration: 1, y: 100 * vh, ease: 'linear'}, 'section-rocks-animation-1-=.7')
+                .from(`.${classesSectionRocks['cave']}`, {duration: .6, delay: .4, x: 35 * vw, ease: 'linear'}, 'section-rocks-animation-1-=.7')
+                .add('section-rocks-animation-2')
+                .to(`.${classesSectionRocks['translate-cotainer']}`, {duration: 2, x: XTranslateContainer1, ease: 'linear'}, 'section-rocks-animation-2')
+                .to(`.${classesSectionRocks['roadmap-line']}`, {duration: 2, x: -20 * vw, ease: 'linear'}, 'section-rocks-animation-2')
+                .to(`.${classesSectionRocks['scale-container']}`, {duration: 2, scale: 1.2, ease: 'linear'}, 'section-rocks-animation-2')
+                .from(`.${classesSectionRocks.cave} .${classesSectionRocks['crystal-container-1']}`, {duration: 2, opacity: 0, scale: .8, y: 20 * vh, ease: 'linear'}, 'section-rocks-animation-2')
+                .add('section-rocks-animation-3')
+                .to(`.${classesSectionRocks['translate-cotainer']}`, {duration: 2, x: XTranslateContainer2, ease: 'linear'}, 'section-rocks-animation-3')
+                .to(`.${classesSectionRocks['scale-container']}`, {duration: 2, scale: 2, ease: 'linear'}, 'section-rocks-animation-3')
+                .from(`.${classesSectionRocks.cave} .${classesSectionRocks['crystal-container-2']}`, {duration: 2, opacity: 0, scale: .8, y: -20 * vh, ease: 'linear'}, 'section-rocks-animation-3')
+                .add('section-rocks-animation-4')
+                .to(`.${classesSectionRocks['translate-cotainer']}`, {duration: 1.5, x: XTranslateContainer3, ease: 'linear'}, 'section-rocks-animation-4')
+                .to(`.${classesSectionRocks['rocks-top']}`, {duration: 1.5, x: -7 * vw, ease: 'linear'}, 'section-rocks-animation-4')
+                .to(`.${classesSectionRocks['rocks-bottom']}`, {duration: 1.5, x: -7 * vw, ease: 'linear'}, 'section-rocks-animation-4')
+                .to(`.${classesSectionRocks['scale-container']}`, {duration: 1.5, scale: 1.1, ease: 'linear'}, 'section-rocks-animation-4')
+                .to(`.${classesSectionRocks.cave} .${classesSectionRocks['crystal-container-2']}`, {duration: 1.5, x: -60 * vw, ease: 'linear'}, 'section-rocks-animation-4')
+                .from(`.${classesSectionRocks['last-block']}`, {duration: 1.5, x: 100 * vw, ease: 'linear'}, 'section-rocks-animation-4')
 
 
             } else {
@@ -375,14 +401,20 @@ export default function Home() {
                 let YOuterScaleContainer2 = 0;
                 let YPlayingMachine = 6 * vh;
 
-                let VhBackground = window.innerHeight / 100;
                 let XScaleContainer = 95 * vw;
+                let XTranslateContainer1 = -1300 + -50 * vw;
+                let XTranslateContainer2 = -2800 + -50 * vw;
+                let XTranslateContainer3 = -3000 + -50 * vw;
 
                 let ScaleSectionChooseScaleContainer = .5;
                 let ScaleSectionChooseScaleContainer2 = .6;
                 let ScalePlayingMachineContainer = 8;
 
                 let WidthSectionForestScaleContainer2 = 35 / .4 * baseFontSize;
+
+                let DurationRoadmapLine = .5;
+
+                let VhBackground = window.innerHeight / 100;
 
                 if (window.innerHeight > 700) {
                     YAppearingInfo2Container = 28 * vh;
@@ -425,10 +457,12 @@ export default function Home() {
 
                 if (window.innerWidth < 600) {
                     XScaleContainer = 75 * vw;
+                    DurationRoadmapLine = .75;
                 }
 
                 if (window.innerWidth < 500) {
                     XScaleContainer = 55 * vw;
+                    DurationRoadmapLine = 1;
                 }
 
                 if (window.innerWidth < 450) {
@@ -460,8 +494,18 @@ export default function Home() {
                 .add('header-animation-4')
                 // .from(`.${classesSectionChoose['section-choose']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
                 .from(`.${classesSectionChoose['section-choose']}`, {duration: 0, display: 'none', ease: 'linear'}, 'header-animation-4')
-                .from(`.${classesSectionChoose['section-choose']}`, {duration: 1, backgroundColor: 'transparent', ease: 'linear'}, 'header-animation-4')
-                .from(`.${classesSectionChoose['character-boxes']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
+                .from(`.${classesSectionChoose['section-choose']}`, {duration: 1, autoAlpha: 0, ease: 'linear'}, 'header-animation-4')
+                .from(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['character-container']}`, 
+                {duration: 1, x: '-40%', ease: 'linear'}, 
+                'header-animation-4')
+                .from(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['character-container']}`, 
+                {duration: 1, x: '80%', ease: 'linear'}, 
+                'header-animation-4')
+                .from(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['character-container']}`, 
+                {duration: 1, x: '-40%', ease: 'linear'}, 
+                'header-animation-4')
+                // .from(`.${classesSectionChoose['character-boxes']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
+                
                 // .from(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
                 // .from(`.${classesSectionChoose['character-box-green']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
                 .add('section-choose-animation')
@@ -581,13 +625,36 @@ export default function Home() {
                 .from(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, scale: 0, y: 100 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -40 * vw, y: 80 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 40 * vw, y: -80 * vh, ease: 'linear'}, 'section-forest-animation-10')
-                // .add('section-forest-animation-11')
-                // .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, y: YAppearingInfo2Container - 4 * vh + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, y: -100 * vh, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -60 * vw, ease: 'linear'}, 'section-forest-animation-11')
-                // .to(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 60 * vw, ease: 'linear'}, 'section-forest-animation-11')
+                .add('section-forest-animation-11')
+                .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, y: YAppearingInfo2Container - 4 * vh + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container + 95 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, y: -100 * vh, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -60 * vw, ease: 'linear'}, 'section-forest-animation-11')
+                .to(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 60 * vw, ease: 'linear'}, 'section-forest-animation-11')
+                .add('section-rocks-animation-1')
+                .from(`.${classesSectionRocks['section-rocks']}`, {duration: 0, display: 'none', ease: 'linear'}, 'section-rocks-animation-1-=.9')
+                .from(`.${classesSectionRocks['section-rocks']}`, {duration: .4, opacity: 0, ease: 'linear'}, 'section-rocks-animation-1-=.9')
+                .from(`.${classesSectionRocks['roadmap-line']}`, {duration: 1, y: 100 * vh, ease: 'linear'}, 'section-rocks-animation-1-=.9')
+                .from(`.${classesSectionRocks['cave']}`, {duration: .6, delay: .4, x: 75 * vw, ease: 'linear'}, 'section-rocks-animation-1-=.9')
+                .add('section-rocks-animation-1.2')
+                .to(`.${classesSectionRocks['roadmap-line']}`, {duration: DurationRoadmapLine, x: -(1000 - window.innerWidth), ease: 'linear'}, 'section-rocks-animation-1.2')
+                .add('section-rocks-animation-2')
+                .to(`.${classesSectionRocks['translate-cotainer']}`, {duration: 1.8, x: XTranslateContainer1, ease: 'linear'}, 'section-rocks-animation-2')
+                .to(`.${classesSectionRocks['roadmap-line']}`, {duration: 1.8, x: -20 * vw, ease: 'linear'}, 'section-rocks-animation-2')
+                .to(`.${classesSectionRocks['scale-container']}`, {duration: 1.8, scale: 1.2, ease: 'linear'}, 'section-rocks-animation-2')
+                .from(`.${classesSectionRocks.cave} .${classesSectionRocks['crystal-container-1']}`, {duration: 1.8, opacity: 0, scale: .8, y: 20 * vh, ease: 'linear'}, 'section-rocks-animation-2')
+                .add('section-rocks-animation-3')
+                .to(`.${classesSectionRocks['translate-cotainer']}`, {duration: 1.8, x: XTranslateContainer2, ease: 'linear'}, 'section-rocks-animation-3')
+                .to(`.${classesSectionRocks['scale-container']}`, {duration: 1.8, scale: 1.8, ease: 'linear'}, 'section-rocks-animation-3')
+                .from(`.${classesSectionRocks.cave} .${classesSectionRocks['crystal-container-2']}`, {duration: 1.8, opacity: 0, scale: .8, y: -20 * vh, ease: 'linear'}, 'section-rocks-animation-3')
+                .add('section-rocks-animation-4')
+                .to(`.${classesSectionRocks['translate-cotainer']}`, {duration: 1.3, x: XTranslateContainer3, ease: 'linear'}, 'section-rocks-animation-4')
+                .to(`.${classesSectionRocks['rocks-top']}`, {duration: 1.3, x: -7 * vw, ease: 'linear'}, 'section-rocks-animation-4')
+                .to(`.${classesSectionRocks['rocks-bottom']}`, {duration: 1.3, x: -7 * vw, ease: 'linear'}, 'section-rocks-animation-4')
+                .to(`.${classesSectionRocks['scale-container']}`, {duration: 1.3, scale: 1.1, ease: 'linear'}, 'section-rocks-animation-4')
+                .to(`.${classesSectionRocks.cave} .${classesSectionRocks['crystal-container-2']}`, {duration: 1.3, x: -400, ease: 'linear'}, 'section-rocks-animation-4')
+                .from(`.${classesSectionRocks['last-block']}`, {duration: 1.3, x: 100 * vw, ease: 'linear'}, 'section-rocks-animation-4')
             }
         })
     };
@@ -603,8 +670,9 @@ export default function Home() {
                 <Header />
                 <SectionChoose />
                 <SectionForest />
-                {/* <SectionRocks /> */}
+                <SectionRocks />
             </div>
+            <Footer />
         </div>
     )
 }

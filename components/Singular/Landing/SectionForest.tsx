@@ -111,11 +111,11 @@ export default function SectionForest() {
                 </div>
             </div>
             <div className={classes['playing-machine-container']}>
-                <Image  src="/static/img/LandingPage/SectionRocks/playingMachine.png" alt="" 
+                <Image src="/static/img/LandingPage/SectionRocks/playingMachine.png" alt="" 
                 // width={348}
                 // height={448}
                 fill
-                className={classes['playing-machine']}  />
+                className={classes['playing-machine']} />
             </div>
             <div className={classes['appearing-info-3']}>
                 <h1 className={classes.title}>

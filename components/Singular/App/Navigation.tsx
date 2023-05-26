@@ -36,7 +36,7 @@ export default function Navigation() {
                         </li>
                     </ul>
                 </div>
-                <a href="#" className={'btn-yellow desktop ' + classes['button-link']}>Buy on Getgems</a>
+                <a href="#" target='_blank' className={'btn-yellow desktop ' + classes['button-link']}>Buy on Getgems</a>
             </div>
         </nav>
     )
