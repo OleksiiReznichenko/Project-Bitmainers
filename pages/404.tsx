@@ -1,3 +1,4 @@
+import TransitionWrapper from '@/components/Singular/App/TransitionWrapper';
 import classes from '@/styles/pagesStyles/error.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,45 +30,47 @@ export default function NotFoundPage() {
     }, []);
 
     return (
-        <div className={classes['page-error']}>
-            <div className={classes.info}>
-                <h1 className={classes.title}>
-                    <span className={classes.yellow}>Nothing </span>
-                    <span className={classes.white}> to mine </span>
-                    <span className={classes['white-small']}> here yet</span>
-                </h1>
-                <p className={classes.paragraph}>We’re probably working on this page</p>
-                <Link href='/' className={'btn-yellow ' + classes.button}>Home</Link>
+        <TransitionWrapper>
+            <div className={classes['page-error']}>
+                <div className={classes.info}>
+                    <h1 className={classes.title}>
+                        <span className={classes.yellow}>Nothing </span>
+                        <span className={classes.white}> to mine </span>
+                        <span className={classes['white-small']}> here yet</span>
+                    </h1>
+                    <p className={classes.paragraph}>We’re probably working on this page</p>
+                    <Link href='/' className={'btn-yellow ' + classes.button}>Home</Link>
+                </div>
+                <div className={classes['character-container']}>
+                    <Image src="/static/img/ErrorPage/character.png" alt="" 
+                    // width={348}
+                    // height={448}
+                    ref={character}
+                    fill
+                    className={classes.character} />
+                </div>
+                <div className={classes['grass-container']}>
+                    <Image src="/static/img/ErrorPage/grass.png" alt="" 
+                    // width={2000}
+                    // height={200}
+                    fill
+                    className={classes.grass} />
+                </div>
+                <div className={classes['background-container']}>
+                    {!isMobileBackground && 
+                    <Image src="/static/img/ErrorPage/background.jpg" alt="" 
+                    // width={1920}
+                    // height={1080}
+                    fill
+                    className={classes.background} />}
+                    {isMobileBackground && 
+                    <Image src="/static/img/ErrorPage/backgroundMobile.jpg" alt="" 
+                    // width={1920}
+                    // height={1080}
+                    fill
+                    className={classes.background} />}
+                </div>
             </div>
-            <div className={classes['character-container']}>
-                <Image src="/static/img/ErrorPage/character.png" alt="" 
-                // width={348}
-                // height={448}
-                ref={character}
-                fill
-                className={classes.character} />
-            </div>
-            <div className={classes['grass-container']}>
-                <Image src="/static/img/ErrorPage/grass.png" alt="" 
-                // width={2000}
-                // height={200}
-                fill
-                className={classes.grass} />
-            </div>
-            <div className={classes['background-container']}>
-                {!isMobileBackground && 
-                <Image src="/static/img/ErrorPage/background.jpg" alt="" 
-                // width={1920}
-                // height={1080}
-                fill
-                className={classes.background} />}
-                {isMobileBackground && 
-                <Image src="/static/img/ErrorPage/backgroundMobile.jpg" alt="" 
-                // width={1920}
-                // height={1080}
-                fill
-                className={classes.background} />}
-            </div>
-        </div>
+        </TransitionWrapper>
     )
 }

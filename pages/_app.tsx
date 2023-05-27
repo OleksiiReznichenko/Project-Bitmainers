@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import { baseActions } from '@/store/base';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { gsap } from 'gsap';
+import { AnimatePresence } from 'framer-motion'
 
 // gsap.registerPlugin(ScrollTrigger);
 
@@ -43,7 +44,13 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <BaseLayout>
-      <Component {...pageProps} />
+      <AnimatePresence
+          mode='wait'
+          initial={false}
+          onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} />
+      </AnimatePresence>
     </BaseLayout>
   )
 }

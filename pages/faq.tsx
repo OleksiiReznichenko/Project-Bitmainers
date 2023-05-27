@@ -1,4 +1,5 @@
 import Footer from '@/components/Singular/App/Footer';
+import TransitionWrapper from '@/components/Singular/App/TransitionWrapper';
 import { slideFunctionsActions } from '@/store/slideFunctions';
 import classes from '@/styles/pagesStyles/faq.module.scss';
 import { useEffect, useState } from 'react';
@@ -223,52 +224,54 @@ export default function FaqPage() {
 
 
     return (
-        <div className={classes['page-faq']}>
-            <div className={classes['inner-container']}>
-                <div className={classes.left}>
-                    <span className={classes.subtitle}>FAQ</span>
-                    <ul className={classes['list-sections']}>
-                        {currentSections.map(el => (
-                            <li key={el.id}
-                             className={classes.item}>
-                                <button
-                                onClick={setCurrentSection.bind(null, el.id)}
-                                 className={classes['button-section'] + ' ' + 
-                                 (currentSection === el.id ? classes.active : '')}>
-                                    <div className={classes['check-mark']}></div>
-                                    <span>{el.text}</span>
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className={classes.right}>
-                    <h1 className={classes.title}>
-                        {currentTitle.white} 
-                        <span className={classes.yellow}>
-                            <img src="/static/svg/faqLeftParenthesis.svg" alt="" className={classes['parenthesis'] + ' ' + classes['parenthesis-left']} />
-                            {currentTitle.yellow}
-                            <img src="/static/svg/faqRightParenthesis.svg" alt="" className={classes['parenthesis'] + ' ' + classes['parenthesis-right']} />
-                        </span>
-                    </h1>
-                    <div onClick={toggleEvent} className={classes.questions}>
-                        {currentQuestions.map(el => (
-                            <div key={el.id} className={classes.question + ' toggle-container'}>
-                                <div className={classes['title-container'] + ' title-container'}>
-                                    <h3 className={classes['title-question']}>{el.question}</h3>
-                                    <svg className={classes.arrow} width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M9.59042 10.144L0.982422 1.53705L2.39642 0.123047L11.0034 8.72905V1.14405H13.0034V12.144H2.00342V10.144H9.59042Z" fill="#353535"/>
-                                    </svg>
+        <TransitionWrapper>
+            <div className={classes['page-faq']}>
+                <div className={classes['inner-container']}>
+                    <div className={classes.left}>
+                        <span className={classes.subtitle}>FAQ</span>
+                        <ul className={classes['list-sections']}>
+                            {currentSections.map(el => (
+                                <li key={el.id}
+                                className={classes.item}>
+                                    <button
+                                    onClick={setCurrentSection.bind(null, el.id)}
+                                    className={classes['button-section'] + ' ' + 
+                                    (currentSection === el.id ? classes.active : '')}>
+                                        <div className={classes['check-mark']}></div>
+                                        <span>{el.text}</span>
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className={classes.right}>
+                        <h1 className={classes.title}>
+                            {currentTitle.white} 
+                            <span className={classes.yellow}>
+                                <img src="/static/svg/faqLeftParenthesis.svg" alt="" className={classes['parenthesis'] + ' ' + classes['parenthesis-left']} />
+                                {currentTitle.yellow}
+                                <img src="/static/svg/faqRightParenthesis.svg" alt="" className={classes['parenthesis'] + ' ' + classes['parenthesis-right']} />
+                            </span>
+                        </h1>
+                        <div onClick={toggleEvent} className={classes.questions}>
+                            {currentQuestions.map(el => (
+                                <div key={el.id} className={classes.question + ' toggle-container'}>
+                                    <div className={classes['title-container'] + ' title-container'}>
+                                        <h3 className={classes['title-question']}>{el.question}</h3>
+                                        <svg className={classes.arrow} width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9.59042 10.144L0.982422 1.53705L2.39642 0.123047L11.0034 8.72905V1.14405H13.0034V12.144H2.00342V10.144H9.59042Z" fill="#353535"/>
+                                        </svg>
+                                    </div>
+                                    <div className={classes['description-container'] + ' description-container'}>
+                                        <div className={classes.answer}>{el.answer}</div>
+                                    </div>
                                 </div>
-                                <div className={classes['description-container'] + ' description-container'}>
-                                    <div className={classes.answer}>{el.answer}</div>
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </TransitionWrapper>
     )
 };

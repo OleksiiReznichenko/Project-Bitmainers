@@ -1,3 +1,4 @@
+import TransitionWrapper from '@/components/Singular/App/TransitionWrapper';
 import Header from '@/components/Singular/Landing/Header';
 import { baseActions, selectIsTouchDevice } from '@/store/base';
 import classes from '@/styles/pagesStyles/landing.module.scss';
@@ -480,17 +481,17 @@ export default function Home() {
                 .to(`.${classesHeader['character-5']}`, {duration: .3, delay: .7, scale: 1.3, ease: 'linear'}, 'header-animation-1')
 
                 .add('header-animation-2')
-                .to(`.${classesHeader['scale-container']}`, {duration: 1, rotate: -1, x: -155 * vw, y: -134 * vh, ease: 'linear'}, 'header-animation-2+=.2')
-                .to(`.${classesHeader['appearing-info']}`, {duration: .3, x: -40 * vw + -30 * baseFontSize, y: 15 * vh, autoAlpha: 0, ease: 'linear'}, 'header-animation-2+=.2')
-                .from(`.${classesHeader['appearing-info-2']}`, {duration: .3, delay: .7, y: -5 * vh, autoAlpha: 0, ease: 'linear'}, 'header-animation-2+=.2')
+                .to(`.${classesHeader['scale-container']}`, {duration: 1, rotate: -1, x: -155 * vw, y: -134 * vh, ease: 'linear'}, 'header-animation-2+=.25')
+                .to(`.${classesHeader['appearing-info']}`, {duration: .3, x: -40 * vw + -30 * baseFontSize, y: 15 * vh, autoAlpha: 0, ease: 'linear'}, 'header-animation-2+=.25')
+                .from(`.${classesHeader['appearing-info-2']}`, {duration: .3, delay: .7, y: -5 * vh, autoAlpha: 0, ease: 'linear'}, 'header-animation-2+=.25')
                 .add('header-animation-3')
-                .to(`.${classesHeader['inner-container']}`, {duration: .3, autoAlpha: 0, ease: 'linear'}, 'header-animation-3+=.2')
-                .to(`.${classesHeader['appearing-info-2']}`, {duration: .3, x: 20 * vw + 40 * baseFontSize, y: -15 * vh, autoAlpha: 0, ease: 'linear'}, 'header-animation-3+=.2')
-                .to(`.${classesHeader['scale-container']}`, {duration: .7, rotate: 0, x: 0, y: 0, ease: 'linear'}, 'header-animation-3+=.2')
-                .to(`.${classesHeader['scale-container']}`, {duration: .7, delay: .7, scale: 1, ease: 'linear'}, 'header-animation-3+=.2')
-                .from(`.${classesHeader['cloud-left-last']}`, {duration: .7, delay: .7, opacity: 0, ease: 'linear'}, 'header-animation-3+=.2')
-                .from(`.${classesHeader['cloud-right-last']}`, {duration: .7, delay: .7, opacity: 0, ease: 'linear'}, 'header-animation-3+=.2')
-                .from(`.${classesHeader['appearing-info-3']}`, {duration: .3, delay: .6, autoAlpha: 0, ease: 'linear'}, 'header-animation-3+=.2')
+                .to(`.${classesHeader['inner-container']}`, {duration: .3, autoAlpha: 0, ease: 'linear'}, 'header-animation-3+=.25')
+                .to(`.${classesHeader['appearing-info-2']}`, {duration: .3, x: 20 * vw + 40 * baseFontSize, y: -15 * vh, autoAlpha: 0, ease: 'linear'}, 'header-animation-3+=.25')
+                .to(`.${classesHeader['scale-container']}`, {duration: .7, rotate: 0, x: 0, y: 0, ease: 'linear'}, 'header-animation-3+=.25')
+                .to(`.${classesHeader['scale-container']}`, {duration: .7, delay: .7, scale: 1, ease: 'linear'}, 'header-animation-3+=.25')
+                .from(`.${classesHeader['cloud-left-last']}`, {duration: .7, delay: .7, opacity: 0, ease: 'linear'}, 'header-animation-3+=.25')
+                .from(`.${classesHeader['cloud-right-last']}`, {duration: .7, delay: .7, opacity: 0, ease: 'linear'}, 'header-animation-3+=.25')
+                .from(`.${classesHeader['appearing-info-3']}`, {duration: .3, delay: .6, autoAlpha: 0, ease: 'linear'}, 'header-animation-3+=.25')
                 .add('header-animation-4')
                 // .from(`.${classesSectionChoose['section-choose']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
                 .from(`.${classesSectionChoose['section-choose']}`, {duration: 0, display: 'none', ease: 'linear'}, 'header-animation-4+=.1')
@@ -665,14 +666,16 @@ export default function Home() {
     }, []);
 
     return (
-        <div className={classes['page-main']}>
-            <div className={classes['animation-block'] + ' animation-block'}>
-                <Header />
-                <SectionChoose />
-                <SectionForest />
-                <SectionRocks />
+        <TransitionWrapper>
+            <div className={classes['page-main']}>
+                <div className={classes['animation-block'] + ' animation-block'}>
+                    <Header />
+                    <SectionChoose />
+                    <SectionForest />
+                    <SectionRocks />
+                </div>
+                <Footer />
             </div>
-            <Footer />
-        </div>
+        </TransitionWrapper>
     )
 }
