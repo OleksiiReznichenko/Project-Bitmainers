@@ -351,6 +351,7 @@
                 height: 40vh;
                 top: 0;
                 clip-path: polygon(0 0, 100% 0, 100% 72%, 0% 100%);
+                background-image: linear-gradient(to left, #BE3B31 -10%, var(--color-red));
             }
 
             .character-container {
@@ -419,6 +420,7 @@
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
+                background-image: linear-gradient(to right, #B46A2B -10%, var(--color-orange-2));
             }
 
             .character-container {
@@ -490,6 +492,7 @@
                 clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
                 // margin-top: -14vh;
                 left: 0;
+                background-image: linear-gradient(to left, #429969 -10%, var(--color-green));
             }
 
             .character-container {

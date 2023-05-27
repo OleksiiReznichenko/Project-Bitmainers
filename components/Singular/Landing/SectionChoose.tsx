@@ -120,7 +120,7 @@ export default function SectionChoose() {
                         <div className={classes['black-layer']}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
-                        <div className={classes.shadow + ' ' + classes['shadow-right'] + ' mobile'}></div>
+                        {/* <div className={classes.shadow + ' ' + classes['shadow-right'] + ' mobile'}></div> */}
                         <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
                         <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
                         <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
@@ -147,7 +147,7 @@ export default function SectionChoose() {
                         <div className={classes['black-layer']}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
-                        <div className={classes.shadow + ' ' + classes['shadow-left'] + ' mobile'}></div>
+                        {/* <div className={classes.shadow + ' ' + classes['shadow-left'] + ' mobile'}></div> */}
                         <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
                         <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
                         <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
@@ -167,7 +167,7 @@ export default function SectionChoose() {
                         <div className={classes['black-layer']}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
-                        <div className={classes.shadow + ' ' + classes['shadow-right'] + ' mobile'}></div>
+                        {/* <div className={classes.shadow + ' ' + classes['shadow-right'] + ' mobile'}></div> */}
                         <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
                         <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
                         <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
