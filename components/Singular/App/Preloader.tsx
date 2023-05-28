@@ -36,6 +36,7 @@ export default function Preloader() {
 
         setTimeout(() => {
             setPercent(100);
+            window.scrollTo(0, 0);
         }, 2200);
     }, []);
 

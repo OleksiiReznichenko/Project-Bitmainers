@@ -36,26 +36,28 @@ export default function SectionForest() {
                     </div>
                 </div>
             </div>
-            <div className={classes['outher-scale-container-2']}>
-                <div className={classes['scale-container-2']}>
-                    <div className={classes['trees-background-2']}>
-                        <div className={classes['trees-front-container']}>
-                            <Image src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
-                            // width={348}
-                            // height={448}
-                            fill
-                            className={classes['trees-front']} />
-                        </div>
-                        <div className={classes['trees-back-container']}>
-                            <Image src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
-                            // width={348}
-                            // height={448}
-                            fill
-                            className={classes['trees-back']} />
+            {/* <div className={classes['outer-outher-scale-container-2']}> */}
+                <div className={classes['outher-scale-container-2']}>
+                    <div className={classes['scale-container-2']}>
+                        <div className={classes['trees-background-2']}>
+                            <div className={classes['trees-front-container']}>
+                                <Image src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
+                                // width={348}
+                                // height={448}
+                                fill
+                                className={classes['trees-front']} />
+                            </div>
+                            <div className={classes['trees-back-container']}>
+                                <Image src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
+                                // width={348}
+                                // height={448}
+                                fill
+                                className={classes['trees-back']} />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
             <div className={classes['miner-container']}>
                 <img src="/static/img/LandingPage/SectionForest/characterMiner.png" alt="" 
                 className={classes.miner} />

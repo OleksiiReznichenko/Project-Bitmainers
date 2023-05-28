@@ -9,7 +9,8 @@
 
     .scale-container,
     .scale-container-2,
-    .outher-scale-container-2 {
+    .outher-scale-container-2,
+    .outer-outher-scale-container-2 {
         width: 100vw;
         height: var(--app-height);
         position: relative;
@@ -17,12 +18,19 @@
     }
     
     .scale-container-2,
-    .outher-scale-container-2 {
+    .outher-scale-container-2,
+    .outer-outher-scale-container-2 {
         // position: absolute;
         // top: 0;
         // left: 0;
         @include abs-center;
         z-index: 3;
+    }
+    
+    .scale-container-2,
+    .outher-scale-container-2,
+    .outer-outher-scale-container-2 {
+        transform: none;
     }
 
     .background-stars-container {

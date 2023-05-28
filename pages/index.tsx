@@ -21,7 +21,16 @@ export default function Home() {
     const dispatch = useDispatch();
     const isTouchDevice = useSelector(selectIsTouchDevice);
     let timeline = gsap.timeline({});
-    let ctx = gsap.context(() => {})
+    let ctx = gsap.context(() => {});
+    let initialWindowWidth = 0;
+
+    const onResize = (): void => {
+        if (!initialWindowWidth) return;
+        // RELOAD PAGE ON RESIZE
+        const newWindowWidth = Math.abs(initialWindowWidth - window.innerWidth);
+        if (newWindowWidth < 100) return;
+        location.reload();
+    };
 
     const initAnimation = (): void => {
         let windowWidth = window.innerWidth;
@@ -329,9 +338,13 @@ export default function Home() {
                 .to(`.${classesSectionForest['trees-background']}`, {duration: 1, x: -99 * vw, ease: 'linear'}, 'section-forest-animation-7')
                 .to(`.${classesSectionForest['grass-container']}`, {duration: 1, opacity: 0, scale: 2.5, x: -180 * vw, y: -12 * 8, ease: 'linear'}, 'section-forest-animation-7')
                 .fromTo(`.${classesSectionForest['scale-container-2']}`, 
-                {duration: 1, opacity: 0, scale: 1, x: '-35%', ease: 'linear'}, 
-                {duration: 1, opacity: 1, scale: 1.9, y: '-100%', ease: 'linear'}, 
+                {duration: 1, opacity: 0, scale: 1, x: '-85%', y: '-50%', ease: 'linear'}, 
+                {duration: 1, opacity: 1, scale: 1.9, x: '-50%', y: '-100%', ease: 'linear'}, 
                 'section-forest-animation-7')
+                // .fromTo(`.${classesSectionForest['scale-container-2']}`, 
+                // {duration: 1, opacity: 0, scale: 1, x: '-35%', ease: 'linear'}, 
+                // {duration: 1, opacity: 1, scale: 1.9, y: '-100%', ease: 'linear'}, 
+                // 'section-forest-animation-7')
                 .fromTo(`.${classesSectionForest['grass-container-2']}`, 
                 {duration: 1, opacity: 0, scale: 1, x: 20 * vw, ease: 'linear'}, 
                 {duration: 1, opacity: 1, scale: 2, y: -8 * 8, x: -10 * vw, ease: 'linear'}, 
@@ -356,7 +369,11 @@ export default function Home() {
                 .to(`.${classesSectionForest['grass-container-2']}`, {duration: .2, opacity: 0, ease: 'linear'}, 'section-forest-animation-9')
                 .add('section-forest-animation-10')
                 .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, scale: .8, y: YAppearingInfo2Container - 4 * vh, ease: 'linear'}, 'section-forest-animation-10')
-                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 'section-forest-animation-10')
+                // .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 'section-forest-animation-10')
+                .fromTo(`.${classesSectionForest['outher-scale-container-2']}`,
+                {duration: 1.2, x: '-50%', y: -50 * vh, ease: 'linear'}, 
+                {duration: 1.2, x: '-50%', y: -50 * vh + YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 
+                 'section-forest-animation-10')
                 .to(`.${classesSectionForest['scale-container-2']}`, {duration: 1.2, scale: .25, ease: 'linear'}, 'section-forest-animation-10')
                 .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, scale: 0, y: 100 * vh, ease: 'linear'}, 'section-forest-animation-10')
@@ -364,7 +381,7 @@ export default function Home() {
                 .from(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 40 * vw, y: -80 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .add('section-forest-animation-11')
                 .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, y: YAppearingInfo2Container - 4 * vh + 95 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
-                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
+                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: -50 * vh + YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
                 .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container + 95 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
                 .to(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, y: -100 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
                 .to(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -60 * vw, ease: 'linear'}, 'section-forest-animation-11+=.2')
@@ -589,9 +606,13 @@ export default function Home() {
                 .to(`.${classesSectionForest['trees-background']}`, {duration: 1, x: -99 * vw, ease: 'linear'}, 'section-forest-animation-7')
                 .to(`.${classesSectionForest['grass-container']}`, {duration: 1, opacity: 0, scale: 2.5, x: -180 * vw, y: -12 * VhBackground, ease: 'linear'}, 'section-forest-animation-7')
                 .fromTo(`.${classesSectionForest['scale-container-2']}`, 
-                {duration: 1, opacity: 0, scale: 1, x: 20 * vw, ease: 'linear'}, 
-                {duration: 1, opacity: 1, scale: 1.9, y: '-110%', x: 0, ease: 'linear'}, 
+                {duration: 1, opacity: 0, scale: 1, x: '-30%', y: '-50%', ease: 'linear'}, 
+                {duration: 1, opacity: 1, scale: 1.9, x: '-50%', y: '-110%', ease: 'linear'}, 
                 'section-forest-animation-7')
+                // .fromTo(`.${classesSectionForest['scale-container-2']}`, 
+                // {duration: 1, opacity: 0, scale: 1, x: 20 * vw, ease: 'linear'}, 
+                // {duration: 1, opacity: 1, scale: 1.9, y: '-110%', x: 0, ease: 'linear'}, 
+                // 'section-forest-animation-7')
                 .fromTo(`.${classesSectionForest['grass-container-2']}`, 
                 {duration: 1, opacity: 0, scale: 1, x: 20 * vw, ease: 'linear'}, 
                 {duration: 1, opacity: 1, scale: 2, y: -8 * VhBackground, x: -10 * vw, ease: 'linear'}, 
@@ -620,7 +641,11 @@ export default function Home() {
                 .to(`.${classesSectionForest['grass-container-2']}`, {duration: .2, opacity: 0, ease: 'linear'}, 'section-forest-animation-9')
                 .add('section-forest-animation-10')
                 .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, scale: .8, y: YAppearingInfo2Container - YPlayingMachine, ease: 'linear'}, 'section-forest-animation-10')
-                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 'section-forest-animation-10')
+                // .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 'section-forest-animation-10')
+                .fromTo(`.${classesSectionForest['outher-scale-container-2']}`,
+                {duration: 1.2, x: '-50%', y: -50 * vh, ease: 'linear'}, 
+                {duration: 1.2, x: '-50%', y: -50 * vh + YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 
+                 'section-forest-animation-10')
                 .to(`.${classesSectionForest['scale-container-2']}`, {duration: 1.2, scale: .25, ease: 'linear'}, 'section-forest-animation-10')
                 .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: -8 * baseFontSize + YAppearingInfo2Container, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, scale: 0, y: 100 * vh, ease: 'linear'}, 'section-forest-animation-10')
@@ -628,7 +653,7 @@ export default function Home() {
                 .from(`.${classesSectionForest['banana-fire-container-2']}`, {duration: 1.2, x: 40 * vw, y: -80 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .add('section-forest-animation-11')
                 .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, y: YAppearingInfo2Container - 4 * vh + 95 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
-                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
+                .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: -50 * vh + YAppearingInfo2Container + YOuterScaleContainer2 + 95 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
                 .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container + 95 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
                 .to(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, y: -100 * vh, ease: 'linear'}, 'section-forest-animation-11+=.2')
                 .to(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -60 * vw, ease: 'linear'}, 'section-forest-animation-11+=.2')
@@ -662,7 +687,15 @@ export default function Home() {
 
     useEffect(() => {
         initAnimation();
-        return () => ctx.revert();
+        initialWindowWidth = window.innerWidth;
+
+        // ADD WINDOW EVENT LISTENER
+        window.addEventListener('resize', onResize);
+
+        return () => {
+            ctx.revert();
+            window.removeEventListener('resize', onResize);
+        };
     }, []);
 
     return (

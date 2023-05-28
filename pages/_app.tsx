@@ -40,6 +40,10 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // ADD WINDOW EVENT LISTENER
     window.addEventListener('resize', onResize);
+
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
   return (
