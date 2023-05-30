@@ -647,7 +647,7 @@ export default function Home() {
                 {duration: 1.2, x: '-50%', y: -50 * vh, ease: 'linear'}, 
                 {duration: 1.2, x: '-50%', y: -50 * vh + YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 
                  'section-forest-animation-10')
-                .to(`.${classesSectionForest['scale-container-2']}`, {duration: 1.2, scale: .25, ease: 'linear'}, 'section-forest-animation-10')
+                .to(`.${classesSectionForest['scale-container-2']}`, {duration: 1.2, scale: .3, ease: 'linear'}, 'section-forest-animation-10')
                 .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: -8 * baseFontSize + YAppearingInfo2Container, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, scale: 0, y: 100 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -40 * vw, y: 80 * vh, ease: 'linear'}, 'section-forest-animation-10')
