@@ -365,7 +365,7 @@ export default function Home() {
                 .to(`.${classesSectionForest['scale-container-2']}`, {duration: .5, delay: .45, width: 35 / .4 * baseFontSize, ease: 'linear'}, 'section-forest-animation-9')
                 .to(`.${classesSectionForest['scale-container-2']}`, {duration: .5, delay: .2, y: YSectionForestScaleContainer2, ease: 'linear'}, 'section-forest-animation-9')
                 .to(`.${classesSectionForest['scale-container-2']}`, {duration: .4, delay: .2, x: '-50%', ease: 'linear'}, 'section-forest-animation-9')
-                .to(`.${classesSectionForest['scale-container-2']}`, {duration: .8, delay: .2, backgroundColor: '#16181A', scale: .4, height: 35 / .5 * baseFontSize, ease: 'linear'}, 'section-forest-animation-9')
+                .to(`.${classesSectionForest['scale-container-2']}`, {duration: .8, delay: .2, backgroundColor: '#16181A', scale: .4, height: 35 / .4 * baseFontSize, ease: 'linear'}, 'section-forest-animation-9')
                 .to(`.${classesSectionForest['grass-container-2']}`, {duration: .2, opacity: 0, ease: 'linear'}, 'section-forest-animation-9')
                 .add('section-forest-animation-10')
                 .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, scale: .8, y: YAppearingInfo2Container - 4 * vh, ease: 'linear'}, 'section-forest-animation-10')
@@ -374,7 +374,7 @@ export default function Home() {
                 {duration: 1.2, x: '-50%', y: -50 * vh, ease: 'linear'}, 
                 {duration: 1.2, x: '-50%', y: -50 * vh + YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 
                  'section-forest-animation-10')
-                .to(`.${classesSectionForest['scale-container-2']}`, {duration: 1.2, scale: .25, ease: 'linear'}, 'section-forest-animation-10')
+                .to(`.${classesSectionForest['scale-container-2']}`, {duration: 1.2, scale: .29, ease: 'linear'}, 'section-forest-animation-10')
                 .to(`.${classesSectionForest['appearing-info-2-container']}`, {duration: 1.2, scale: .2, y: YPlayingMachineInfo + YAppearingInfo2Container, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['appearing-info-3']}`, {duration: 1.2, scale: 0, y: 100 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 .from(`.${classesSectionForest['banana-fire-container-1']}`, {duration: 1.2, x: -40 * vw, y: 80 * vh, ease: 'linear'}, 'section-forest-animation-10')
