@@ -258,24 +258,37 @@ export default function Home() {
                 .from(`.${classesSectionChoose['character-box-red']}`, {duration: 1, x: -XCharacterBox, ease: 'linear'}, 'header-animation-4+=.1')
                 .from(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, x: 3 * XCharacterBox, ease: 'linear'}, 'header-animation-4+=.1')
                 .from(`.${classesSectionChoose['character-box-green']}`, {duration: 1, x: XCharacterBox, onStart: () => {
-                    console.log('Started');
-                    dispatch(baseActions.sectionChooseAnimationStartedToTrue());
+                    // console.log('Started');
+                    // dispatch(baseActions.sectionChooseAnimationStartedToTrue());
                 }, 
                 onReverseComplete: () => {
-                    console.log('Reverse Completed');
-                    dispatch(baseActions.sectionChooseAnimationStartedToFalse());
-                },  ease: 'linear'}, 'header-animation-4')
+                    // console.log('Reverse Completed');
+                    // dispatch(baseActions.sectionChooseAnimationStartedToFalse());
+                }, ease: 'linear'}, 'header-animation-4')
                 .add('section-choose-animation')
                 .to(`.${classesSectionChoose['banana-3']}`, {duration: 1, x: 0, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, cursor: 'default', width: 100 * vw, x: XCharacterBoxYellow, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose['character-box-red']}`, {duration: 1, display: 'none', x: -XCharacterBox, ease: 'linear'}, 'section-choose-animation')
                 .to(`.${classesSectionChoose['character-box-green']}`, {duration: 1, display: 'none', x: XCharacterBox, ease: 'linear'}, 'section-choose-animation')
-                .to(`.${classesSectionChoose['character-boxes']}`, {duration: .4, x: 0, ease: 'linear'}, 'section-choose-animation')
+                .to(`.${classesSectionChoose['character-boxes']}`, {duration: .6, onComplete: () => {
+                    console.log('Completed');
+                    dispatch(baseActions.sectionChooseAnimationStartedToTrue());
+                    gsap.to(`.${classesSectionChoose['character-boxes']}`, { duration: .6, x: 0});
+                }, 
+                onReverseComplete: () => {
+                    console.log('Reverse Completed');
+                    dispatch(baseActions.sectionChooseAnimationStartedToFalse());
+                }, ease: 'linear'}, 'section-choose-animation')
+                .to(`.${classesSectionChoose['character-boxes']}`, {duration: .1, delay: .5, 
+                onReverseComplete: () => {
+                    console.log('Reverse Completed 2');
+                    dispatch(baseActions.sectionChooseAnimationStartedToFalse());
+                }, ease: 'linear'}, 'section-choose-animation')
                 .add('section-choose-animation-2')
                 .to(`.${classesSectionChoose['banana-1']}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
                 .to(`.${classesSectionChoose['banana-2']}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
                 .to(`.${classesSectionChoose['banana-3']}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
-                .to(`.${classesSectionChoose.border}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
+                .to(`.${classesSectionChoose['borders-container']}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
                 .to(`.${classesSectionChoose.info}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
                 .to(`.${classesSectionChoose.shadow}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation-2')
                 .to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['character-container']}`, {duration: 1, scale: .35, y: '-50%', ease: 'linear'}, 'section-choose-animation-2')

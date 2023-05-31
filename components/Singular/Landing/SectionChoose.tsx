@@ -121,10 +121,12 @@ export default function SectionChoose() {
                         <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
                         {/* <div className={classes.shadow + ' ' + classes['shadow-right'] + ' mobile'}></div> */}
-                        <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                        <div className={classes['borders-container']}>
+                            <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                        </div>
                     </div>
                     <div className={classes['character-box-yellow'] + ' ' + classes['character-box'] + ' yellow ' + (activeCharacter === 'yellow' ? classes.active : '')}>
                         {/* <div className={classes['scale-container']}> */}
@@ -148,10 +150,12 @@ export default function SectionChoose() {
                         <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
                         {/* <div className={classes.shadow + ' ' + classes['shadow-left'] + ' mobile'}></div> */}
-                        <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                        <div className={classes['borders-container']}>
+                            <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                        </div>
                     </div>
                     <div className={classes['character-box-green'] + ' ' + classes['character-box'] + ' green ' + (activeCharacter === 'green' ? classes.active : '')}>
                         <div className={classes['character-container']}>
@@ -168,10 +172,12 @@ export default function SectionChoose() {
                         <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
                         <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
                         {/* <div className={classes.shadow + ' ' + classes['shadow-right'] + ' mobile'}></div> */}
-                        <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
-                        <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                        <div className={classes['borders-container']}>
+                            <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
+                            <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                        </div>
                     </div>
                 </div>
             </div>
