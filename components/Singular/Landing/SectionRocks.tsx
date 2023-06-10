@@ -33,17 +33,17 @@ export default function SectionRocks() {
                     <div className={classes['scale-container']}>
                         <img src="/static/img/LandingPage/SectionRocks/rock1.png" alt="" className={classes['rock-1']} />
                         <div className={classes['rocks-top-container']}>
-                            <Image src='/static/img/LandingPage/SectionRocks/rockTop.png' alt=''
+                            <Image quality={95} priority={true} src='/static/img/LandingPage/SectionRocks/rockTop.png' alt=''
                             fill
                             className={classes['rocks-top']} />
                         </div>
                         <div className={classes['background-rocks-container']}>
-                            <Image src='/static/img/LandingPage/SectionRocks/backgroundRocks.png' alt=''
+                            <Image quality={95}  src='/static/img/LandingPage/SectionRocks/backgroundRocks.png' alt=''
                             fill
                             className={classes['background-rocks']} />
                         </div>
                         <div className={classes['rocks-bottom-container']}>
-                            <Image src='/static/img/LandingPage/SectionRocks/rockBottom.png' alt=''
+                            <Image quality={95} priority={true} src='/static/img/LandingPage/SectionRocks/rockBottom.png' alt=''
                             fill
                             className={classes['rocks-bottom']} />
                         </div>

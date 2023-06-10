@@ -4,15 +4,13 @@ import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-type ActiveCharacter = 'red' | 'yellow' | 'green';
-
 export default function SectionForest() {
     
 
     return (
         <section className={classes['section-forest'] + ' section'}>
             <div className={classes['background-stars-container']}>
-                <Image src="/static/img/LandingPage/SectionForest/backgroundStars.png" alt="" 
+                <Image quality={95}  src="/static/img/LandingPage/SectionForest/backgroundStars.png" alt="" 
                 // width={348}
                 // height={448}
                 fill
@@ -21,14 +19,14 @@ export default function SectionForest() {
             <div className={classes['scale-container']}>
                 <div className={classes['trees-background']}>
                     <div className={classes['trees-front-container']}>
-                        <Image src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
+                        <Image quality={95}  src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
                         // width={348}
                         // height={448}
                         fill
                         className={classes['trees-front']} />
                     </div>
                     <div className={classes['trees-back-container']}>
-                        <Image src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
+                        <Image quality={95}  src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
                         // width={348}
                         // height={448}
                         fill
@@ -41,14 +39,14 @@ export default function SectionForest() {
                     <div className={classes['scale-container-2']}>
                         <div className={classes['trees-background-2']}>
                             <div className={classes['trees-front-container']}>
-                                <Image src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
+                                <Image quality={95}  src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
                                 // width={348}
                                 // height={448}
                                 fill
                                 className={classes['trees-front']} />
                             </div>
                             <div className={classes['trees-back-container']}>
-                                <Image src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
+                                <Image quality={95}  src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
                                 // width={348}
                                 // height={448}
                                 fill
@@ -58,9 +56,17 @@ export default function SectionForest() {
                     </div>
                 </div>
             {/* </div> */}
-            <div className={classes['miner-container']}>
+            <div className={classes['character-container'] + ' ' + classes['yellow-character-container']}>
                 <img src="/static/img/LandingPage/SectionForest/characterMiner.png" alt="" 
-                className={classes.miner} />
+                className={classes.character} />
+            </div>
+            <div className={classes['character-container'] + ' ' + classes['red-character-container']}>
+                <img src="/static/img/LandingPage/SectionForest/characterRed.png" alt="" 
+                className={classes.character} />
+            </div>
+            <div className={classes['character-container'] + ' ' + classes['green-character-container']}>
+                <img src="/static/img/LandingPage/SectionForest/characterGreen.png" alt="" 
+                className={classes.character} />
             </div>
             <div className={classes['grass-container']}>
                 <img src="/static/img/LandingPage/SectionForest/grass.png" alt="" 
@@ -113,7 +119,7 @@ export default function SectionForest() {
                 </div>
             </div>
             <div className={classes['playing-machine-container']}>
-                <Image src="/static/img/LandingPage/SectionRocks/playingMachine.png" alt="" 
+                <Image quality={95}  src="/static/img/LandingPage/SectionRocks/playingMachine.png" alt="" 
                 // width={348}
                 // height={448}
                 fill

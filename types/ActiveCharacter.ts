@@ -1,0 +1,1 @@
+export type ActiveCharacter = 'red' | 'yellow' | 'green';

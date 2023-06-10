@@ -115,7 +115,10 @@
         left: -700px;
     }
 
-    .miner-container {
+    .character-container,
+    .yellow-character-container,
+    .green-character-container,
+    .red-character-container {
         position: absolute;
         bottom: 10px;
         // left: 44%;
@@ -123,7 +126,8 @@
         transform: translateX(-50%);
         z-index: 100;
 
-        .miner {
+        .miner,
+        .character {
             width: 17rem;
             // transform: translateX(-14vw);
 

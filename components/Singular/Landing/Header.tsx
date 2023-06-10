@@ -50,7 +50,7 @@ export default function Header() {
                 <span className={classes.subtitle}>by Banana Labs</span>
             </div>
             <div className={classes['scale-container']}>
-                <Image src='/static/img/LandingPage/Header/headerBackground1.jpg' 
+                <Image quality={95}  src='/static/img/LandingPage/Header/headerBackground1.jpg' 
                 alt='' fill className={classes.background} />
                 <img src='/static/img/LandingPage/Header/cloudLeftLastSection.png' 
                 alt='' className={classes['cloud-left-last']} />
