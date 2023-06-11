@@ -414,13 +414,13 @@
             @media only screen and (max-width: 850px) {
                 height: 40vh;
                 top: 0;
-                clip-path: polygon(0 0, 100% 0, 100% 72%, 0% 100%);
             }
 
             .inner-container {
                 background-color: var(--color-red);
 
                 @media only screen and (max-width: 850px) {
+                    clip-path: polygon(0 0, 100% 0, 100% 72%, 0% 100%);
                     background-image: linear-gradient(to left, #BE3B31 -10%, var(--color-red));
                 }
             }
@@ -493,7 +493,6 @@
 
             @media only screen and (max-width: 850px) {
                 height: 55vh;
-                clip-path: polygon(0 25%, 100% 0, 100% 77%, 0% 100%);
                 // margin-top: -14vh;
                 // margin-bottom: -33vh;
                 left: 0;
@@ -505,6 +504,7 @@
                 background-color: var(--color-orange-2);
 
                 @media only screen and (max-width: 850px) {
+                    clip-path: polygon(0 25%, 100% 0, 100% 77%, 0% 100%);
                     background-image: linear-gradient(to right, #B46A2B -10%, var(--color-orange-2));
                 }
             }
@@ -583,7 +583,6 @@
 
             @media only screen and (max-width: 850px) {
                 height: 40vh;
-                clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
                 // margin-top: -14vh;
                 left: 0;
             }
@@ -592,6 +591,7 @@
                 background-color: var(--color-green);
 
                 @media only screen and (max-width: 850px) {
+                    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
                     background-image: linear-gradient(to left, #429969 -10%, var(--color-green));
                 }
             }

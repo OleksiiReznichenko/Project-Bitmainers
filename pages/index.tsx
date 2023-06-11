@@ -20,6 +20,7 @@ gsap.registerPlugin(ScrollTrigger);
 let startedIndicator = false;
 let endedIndicator = false;
 let halfBoxWidth = 0;
+let colorChangeAnimation: any;
 
 export default function Home() {
     const dispatch = useDispatch();
@@ -76,14 +77,14 @@ export default function Home() {
     
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // TIMELINE END
-        let scrollTimelineEnd = 'top -1360%';
+        let scrollTimelineEnd = 'top -1460%';
     
         if (navigator.userAgent.match(/firefox|fxios/i)) {
             scrollTimelineEnd = 'top -1700%';
         }
     
         if (window.outerWidth < 850 || isTouchDevice) {
-            scrollTimelineEnd = 'top -9300px';
+            scrollTimelineEnd = 'top -10000px';
         }
     
         let scrollTimelineTrigger = `.animation-block`;
@@ -102,7 +103,7 @@ export default function Home() {
                     // invalidateOnRefresh: true
                     onUpdate: self => {
                         setTimelineProgress(self.progress)
-
+                        // console.log(self.progress);
                     }
                 }
             });
@@ -287,53 +288,37 @@ export default function Home() {
                 .from(`.${classesSectionChoose['section-choose']}`, {duration: 1, backgroundColor: 'transparent', ease: 'linear'}, 'header-animation-4+=.1')
                 .from(`.${classesSectionChoose['character-box-red']}`, {duration: 1, x: -XCharacterBox, ease: 'linear'}, 'header-animation-4+=.1')
                 .from(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, x: 3 * XCharacterBox, ease: 'linear'}, 'header-animation-4+=.1')
-                .from(`.${classesSectionChoose['character-box-green']}`, {duration: 1, x: XCharacterBox, onStart: () => {
-                    // console.log('Started');
-                    // dispatch(baseActions.sectionChooseAnimationStartedToTrue());
-                }, 
-                onComplete: () => {
-                    // console.log('Reverse Completed');
-                    // dispatch(baseActions.sectionChooseAnimationStartedToFalse());
-                }, 
-                onReverseComplete: () => {
-                    // console.log('Reverse Completed');
-                    // dispatch(baseActions.sectionChooseAnimationStartedToFalse());
-                }, ease: 'linear'}, 'header-animation-4')
+                .from(`.${classesSectionChoose['character-box-green']}`, {duration: 1, x: XCharacterBox, ease: 'linear'}, 'header-animation-4+=.1')
                 .add('section-choose-animation')
-                .to(`.${classesSectionChoose['banana-3']}`, {duration: 1, x: 0, ease: 'linear'}, 'section-choose-animation+=.4')
-                // .to(`.${classesSectionChoose.active}`, {duration: 1, cursor: 'default', width: 100 * vw, x: '-50%', ease: 'linear'}, 'section-choose-animation+=.4')
-                .to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: 1, cursor: 'default', width: 100 * vw, ease: 'linear'}, 'section-choose-animation+=.4')
-                .to(`.${classesSectionChoose['character-box-green']}`, {duration: 1, cursor: 'default', width: 100 * vw, ease: 'linear'}, 'section-choose-animation+=.4')
-                .to(`.${classesSectionChoose['character-box-red']}`, {duration: 1, cursor: 'default', width: 100 * vw, ease: 'linear'}, 'section-choose-animation+=.4')
+                .to(`.${classesSectionChoose['banana-3']}`, {duration: 1, x: 0, ease: 'linear'}, 'section-choose-animation+=.7')
+                // .to(`.${classesSectionChoose.active}`, {duration: 1, cursor: 'default', width: 100 * vw, x: '-50%', ease: 'linear'}, 'section-choose-animation+=.6')
+                .to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: 1, cursor: 'default', width: 100 * vw, ease: 'linear'}, 'section-choose-animation+=.7')
+                .to(`.${classesSectionChoose['character-box-green']}`, {duration: 1, cursor: 'default', width: 100 * vw, ease: 'linear'}, 'section-choose-animation+=.7')
+                .to(`.${classesSectionChoose['character-box-red']}`, {duration: 1, cursor: 'default', width: 100 * vw, ease: 'linear'}, 'section-choose-animation+=.7')
                 // .to(`.${classesSectionChoose['character-box-red']}`, {duration: 1, display: 'none', x: -XCharacterBox, ease: 'linear'}, 'section-choose-animation+=.4')
                 // .to(`.${classesSectionChoose['character-box-red']}`, {duration: 1, ease: 'linear'}, 'section-choose-animation+=.4')
                 // .to(`.${classesSectionChoose['character-box-green']}`, {duration: 1, display: 'none', x: XCharacterBox, onStart: () => {
                 .to(`.${classesSectionChoose['character-box-green']}`, {duration: 1, onStart: () => {
-                    console.log('Start');
+                    // console.log('Start');
                     dispatch(baseActions.sectionChooseAnimationStartedToTrue());
                     // gsap.to(`.${classesSectionChoose['character-boxes']}`, { duration: .5, x: 0});
                 }, 
                 onReverseComplete: () => {
-                    console.log('Reverse Completed');
-                    dispatch(baseActions.sectionChooseAnimationStartedToFalse());
-                }, ease: 'linear'}, 'section-choose-animation+=.4')
-                .to(`.${classesSectionChoose['character-boxes']}`, {duration: .6, onStart: () => {
-                    // timeline.kill();
-                    // timeline.invalidate();
-                    // timeline.resume();
-                }, 
-                onComplete: () => {
-                    // console.log('Completed');
-                    // dispatch(baseActions.sectionChooseAnimationStartedToTrue());
-                    // gsap.to(`.${classesSectionChoose['character-boxes']}`, { duration: .5, x: 0});
-                }, 
-                onReverseComplete: () => {
                     // console.log('Reverse Completed');
-                    // dispatch(baseActions.sectionChooseAnimationStartedToFalse());
-                }, ease: 'linear'}, 'section-choose-animation')
-                // .to(`.${classesSectionChoose['character-boxes']}`, {duration: .1, delay: .4, 
+                    dispatch(baseActions.sectionChooseAnimationStartedToFalse());
+                }, ease: 'linear'}, 'section-choose-animation+=.7')
+                // .to(`.${classesSectionChoose['character-boxes']}`, {duration: .6, onStart: () => {
+                //     // timeline.kill();
+                //     // timeline.invalidate();
+                //     // timeline.resume();
+                // }, 
+                // onComplete: () => {
+                //     // console.log('Completed');
+                //     // dispatch(baseActions.sectionChooseAnimationStartedToTrue());
+                //     // gsap.to(`.${classesSectionChoose['character-boxes']}`, { duration: .5, x: 0});
+                // }, 
                 // onReverseComplete: () => {
-                //     // console.log('Reverse Completed 2');
+                //     // console.log('Reverse Completed');
                 //     // dispatch(baseActions.sectionChooseAnimationStartedToFalse());
                 // }, ease: 'linear'}, 'section-choose-animation')
                 .add('section-choose-animation-2')
@@ -600,27 +585,31 @@ export default function Home() {
                 // .from(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
                 // .from(`.${classesSectionChoose['character-box-green']}`, {duration: 1, y: 110 * vh, ease: 'linear'}, 'header-animation-4')
                 .add('section-choose-animation')
-                .to(`.${classesSectionChoose['character-box-yellow']}`, {duration: 1, cursor: 'default', backgroundImage: 'linear-gradient(to right, #FFB23F, #FFB23F)', clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', height: 110 * vh, ease: 'linear'}, 'section-choose-animation')
-                .to(`.${classesSectionChoose['character-box-red']}`, {duration: 1, y: -35 * vh, opacity: 0, ease: 'linear'}, 'section-choose-animation')
-                .to(`.${classesSectionChoose['character-box-green']}`, {duration: 1, y: 35 * vh, opacity: 0, ease: 'linear'}, 'section-choose-animation')
-                .to(`.${classesSectionChoose['character-boxes']}`, {duration: .4, y: 0, ease: 'linear'}, 'section-choose-animation')
-                .to(`.${classesSectionChoose['info-left']}`, {duration: .8, opacity: 0, x: -30 * vw, ease: 'linear'}, 'section-choose-animation')
-                .to(`.${classesSectionChoose['info-right']}`, {duration: .8, opacity: 0, x: 30 * vw, ease: 'linear'}, 'section-choose-animation')
-                .to(`.${classesSectionChoose.shadow}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation')
+                .to(`.${classesSectionChoose['character-box']}`, {duration: 1, cursor: 'default', height: 110 * vh, ease: 'linear'}, 'section-choose-animation+=.9')
+                .to(`.${classesSectionChoose['character-box']} .${classesSectionChoose['inner-container']}`, {duration: 1, clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', ease: 'linear'}, 'section-choose-animation+=.9')
+                .to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: 1, backgroundImage: 'linear-gradient(to right, #FFB23F, #FFB23F)', ease: 'linear'}, 'section-choose-animation+=.9')
+                .to(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['inner-container']}`, {duration: 1, backgroundImage: 'linear-gradient(to left, #FF563F, #FF563F)', ease: 'linear'}, 'section-choose-animation+=.9')
+                .to(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['inner-container']}`, {duration: 1, backgroundImage: 'linear-gradient(to left, #3FFFA3, #3FFFA3)', ease: 'linear'}, 'section-choose-animation+=.9')
+                // .to(`.${classesSectionChoose['character-box-red']}`, {duration: 1, y: -35 * vh, opacity: 0, ease: 'linear'}, 'section-choose-animation+=.9')
+                // .to(`.${classesSectionChoose['character-box-green']}`, {duration: 1, y: 35 * vh, opacity: 0, ease: 'linear'}, 'section-choose-animation+=.9')
+                // .to(`.${classesSectionChoose['character-boxes']}`, {duration: .4, y: 0, ease: 'linear'}, 'section-choose-animation+=.9')
+                .to(`.${classesSectionChoose['info-left']}`, {duration: .8, opacity: 0, x: -30 * vw, ease: 'linear'}, 'section-choose-animation+=.9')
+                .to(`.${classesSectionChoose['info-right']}`, {duration: .8, opacity: 0, x: 30 * vw, ease: 'linear'}, 'section-choose-animation+=.9')
+                .to(`.${classesSectionChoose.shadow}`, {duration: .8, opacity: 0, ease: 'linear'}, 'section-choose-animation+=.9')
                 .fromTo(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['character']}`, 
                 {duration: 1, y: '10%', x: '40%', ease: 'linear'}, 
                 {duration: 1, scale: .5, y: 0, x: 0, ease: 'linear'}, 
-                'section-choose-animation')
+                'section-choose-animation+=.9')
                 .fromTo(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['character']}`, 
                 {duration: 1, y: '10%', x: '-40%', ease: 'linear'}, 
                 {duration: 1, scale: .5, y: 0, x: 0, ease: 'linear'}, 
-                'section-choose-animation')
+                'section-choose-animation+=.9')
                 .fromTo(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['character']}`, 
                 {duration: 1, y: '10%', x: '40%', ease: 'linear'}, 
                 {duration: 1, scale: .5, y: 0, x: 0, ease: 'linear'}, 
-                'section-choose-animation')
+                'section-choose-animation+=.9')
                 .add('section-choose-animation-3')
-                .to(`.${classesSectionChoose['section-choose']}`, {duration: .8, backgroundColor: characterBoxColor, ease: 'linear'}, 'section-choose-animation-3-=.2')
+                // .to(`.${classesSectionChoose['section-choose']}`, {duration: .8, backgroundColor: characterBoxColor, ease: 'linear'}, 'section-choose-animation-3-=.2')
                 .from(`.${classesSectionChoose['box-part-top']}`, {duration: .8, y: -120 * vh, x: 5 * vw, rotate: 7, ease: 'linear'}, 'section-choose-animation-3-=.2')
                 .from(`.${classesSectionChoose['box-part-bottom']}`, {duration: .8, y: 80 * vh, x: 5 * vw, rotate: -7, ease: 'linear'}, 'section-choose-animation-3-=.2')
                 .add('section-choose-animation-4')
@@ -630,7 +619,7 @@ export default function Home() {
                 .add('section-choose-animation-5')
                 .to(`.${classesSectionChoose['scale-container']}`, {duration: .5, scale: ScaleSectionChooseScaleContainer, y: -12 * vh, ease: 'linear'}, 'section-choose-animation-5')
                 .to(`.${classesSectionChoose['section-choose']}`, {duration: .5, backgroundColor: 'transparent', ease: 'linear'}, 'section-choose-animation-5')
-                .to(`.${classesSectionChoose['character-box-yellow']}`, {duration: 0, background: 'transparent', ease: 'linear'}, 'section-choose-animation-5')
+                .to(`.${classesSectionChoose['character-box']} .${classesSectionChoose['inner-container']}`, {duration: 0, background: 'transparent', ease: 'linear'}, 'section-choose-animation-5')
                 .add('section-forest-animation')
                 .fromTo(`.${classesSectionForest['trees-background']}`, {duration: .5, y: 60 * vh, ease: 'linear'}, 
                 {duration: .8, y: -10 * VhBackground, x: 14 * vw, scale: 1.2, ease: 'linear'}, 'section-forest-animation')
@@ -784,6 +773,7 @@ export default function Home() {
     }, []);
 
     useEffect(() => {
+        // if (window.innerWidth < 850) return;
         if (!characterBoxYellow || !characterBoxYellowInner || !characterBoxGreen || !characterBoxRed) return;
         if (activeCharacter === 'yellow') {
             setCharacterBoxColor('#FFB23F');
@@ -797,6 +787,14 @@ export default function Home() {
             characterYellow!.style.display = 'block';
             characterGreen!.style.display = 'none';
             characterRed!.style.display = 'none';
+
+            if (window.innerWidth < 850) {
+                console.log('characterBoxGreen.clientHeight', characterBoxGreen.clientHeight);
+                characterBoxYellow.style.maxHeight = '';
+                characterBoxGreen.style.maxHeight = characterBoxGreen.style.height;
+                characterBoxRed.style.maxHeight = characterBoxRed.style.height;
+                // characterBoxGreen.style.backgroundImage = ''
+            }
             // console.log('YELLOW');
         } else if (activeCharacter === 'red') {
             setCharacterBoxColor('#FF563F');
@@ -805,11 +803,18 @@ export default function Home() {
             characterBoxRed.style.zIndex = '180';
             characterBoxYellowInner.style.maxWidth = characterBoxYellow.clientWidth + 'px';
             characterBoxGreen.style.maxWidth = characterBoxRed.clientWidth + 'px';
-            characterBoxYellow.style.zIndex = '80';
+            characterBoxYellow.style.zIndex = '90';
             characterBoxGreen.style.zIndex = '80';
             characterRed!.style.display = 'block';
             characterYellow!.style.display = 'none';
             characterGreen!.style.display = 'none';
+
+            if (window.innerWidth < 850) {
+                characterBoxRed.style.maxHeight = '';
+                characterBoxYellow.style.maxHeight = characterBoxYellow.style.height;
+                characterBoxGreen.style.maxHeight = characterBoxGreen.style.height;
+
+            }
             // console.log('RED');
         } else if (activeCharacter === 'green') {
             setCharacterBoxColor('#3FFFA3');
@@ -818,27 +823,48 @@ export default function Home() {
             characterBoxGreen.style.zIndex = '180';
             characterBoxYellowInner.style.maxWidth = characterBoxYellow.clientWidth + 'px';
             characterBoxRed.style.maxWidth = characterBoxRed.clientWidth + 'px';
-            characterBoxYellow.style.zIndex = '80';
+            characterBoxYellow.style.zIndex = '90';
             characterBoxRed.style.zIndex = '80';
             characterGreen!.style.display = 'block';
             characterYellow!.style.display = 'none';
             characterRed!.style.display = 'none';
+
+            if (window.innerWidth < 850) {
+                characterBoxGreen.style.maxHeight = '';
+                characterBoxYellow.style.maxHeight = characterBoxYellow.style.height;
+                characterBoxRed.style.maxHeight = characterBoxRed.style.height;
+
+            }
             // console.log('GREEN');
         }
 
-        // console.log('UPDATE ON START');
+        console.log('UPDATE ON START');
     }, [activeCharacter, characterBoxYellow, characterBoxGreen, characterBoxRed]);
 
     useEffect(() => {
-        // Width: From 0.2891 - To 0.324
+        // if (window.innerWidth < 850) return;
+
+        // DESKTOP
+        // Width: From 0.2946 - To 0.3288
         // Color: From 0.3579 - To 0.38
 
-        const colorTopPercent = 0.38;
-        const colorBottomPercent = 0.35;
-        // const widthTopPercent = 0.324;
-        const widthTopPercent = 0.328;
-        // const widthBottomPercent = 0.2891;
-        const widthBottomPercent = 0.292;
+        // MOBILE
+        // Height: From 0.214 - To 0.2517
+        // Color: From 0.283 - To 0.306
+
+        let widthBottomPercent = 0.3;
+        // let widthBottomPercent = 0.31;
+        let widthTopPercent = 0.333;
+        // let widthTopPercent = 0.35;
+        let colorBottomPercent = 0.343;
+        let colorTopPercent = 0.38;
+
+        if (window.innerWidth < 850) {
+            widthBottomPercent = 0.217;
+            widthTopPercent = 0.255;
+            colorBottomPercent = 0.27;
+        }
+ 
         const widthPercent = (widthTopPercent - widthBottomPercent) / 100; // 0.000349
         const currentPercent = (100 - ((widthTopPercent - timelineProgress) / widthPercent)) / 100;
 
@@ -865,7 +891,7 @@ export default function Home() {
             percent = 0;
             startedIndicator = false;
             gsap.to(`.${classesSectionChoose['character-box']}`, {duration: .1, cursor: 'pointer', ease: 'linear'});
-            gsap.to(`.${classesSectionChoose['character-box']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: '-50%', ease: 'linear'})
+            gsap.to(`.${classesSectionChoose['character-box']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: '-50%', y: 0, ease: 'linear'})
             
             if (characterBoxYellowInner && !halfBoxWidth) {
                 let widthString = characterBoxYellowInner!.style.width;
@@ -894,30 +920,53 @@ export default function Home() {
         }
 
         if (startedIndicator) {
-            if (activeCharacter === 'yellow') {
-                gsap.to(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (-70 * vw - halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
-                gsap.to(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (70 * vw + halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
-            }
+            if (window.innerWidth > 850) {
+                if (activeCharacter === 'yellow') {
+                    gsap.to(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (-70 * vw - halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
+                    gsap.to(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (70 * vw + halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
+                }
+    
+                if (activeCharacter === 'green') {
+                    gsap.to(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (-70 * vw - halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
+                    gsap.to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (-70 * vw - halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
+                }
+    
+                if (activeCharacter === 'red') {
+                    gsap.to(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (70 * vw + halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
+                    gsap.to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (70 * vw + halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
+                }
+            } else {
+                if (activeCharacter === 'yellow') {
+                    gsap.to(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['inner-container']}`, {duration: .15, y: -70 * vh * percent, ease: 'linear'});
+                    gsap.to(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['inner-container']}`, {duration: .15, y: 70 * vh * percent, ease: 'linear'});
+                }
 
-            if (activeCharacter === 'green') {
-                gsap.to(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (-70 * vw - halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
-                gsap.to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (-70 * vw - halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
-            }
+                if (activeCharacter === 'green') {
+                    gsap.to(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['inner-container']}`, {duration: .15, y: 5 * vh * percent, ease: 'linear'});
+                    gsap.to(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['inner-container']}`, {duration: .15, y: -70 * vh * percent, ease: 'linear'});
+                    gsap.to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: .15, y: -70 * vh * percent, ease: 'linear'});
+                }
 
-            if (activeCharacter === 'red') {
-                gsap.to(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (70 * vw + halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
-                gsap.to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: .15, x: (70 * vw + halfBoxWidth) * percent + halfBoxWidth, ease: 'linear'});
+                if (activeCharacter === 'red') {
+                    gsap.to(`.${classesSectionChoose['character-box-red']} .${classesSectionChoose['inner-container']}`, {duration: .15, y: -5 * vh * percent, ease: 'linear'});
+                    gsap.to(`.${classesSectionChoose['character-box-green']} .${classesSectionChoose['inner-container']}`, {duration: .15, y: 70 * vh * percent, ease: 'linear'});
+                    gsap.to(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`, {duration: .15, y: 70 * vh * percent, ease: 'linear'});
+                }
             }
         }
 
         if (timelineProgress >= colorBottomPercent) {
-            if (timelineProgress > .4) {
-                gsap.to(`.${classesSectionChoose['background-color']}`, {duration: .5, backgroundColor: 'transparent', ease: 'linear'});
+            let colorBreakPoint = window.innerWidth > 850 ? 0.405 : 0.296;
+            
+            colorChangeAnimation?.kill();
+            if (timelineProgress > colorBreakPoint) {
+                colorChangeAnimation = gsap.to(`.${classesSectionChoose['background-color']}`, {duration: .5, backgroundColor: 'transparent', ease: 'linear'});
             } else {
-                gsap.to(`.${classesSectionChoose['background-color']}`, {duration: .2, backgroundColor: characterBoxColor, ease: 'linear'});
+                colorChangeAnimation = gsap.to(`.${classesSectionChoose['background-color']}`, {duration: .2, backgroundColor: characterBoxColor, ease: 'linear'});
             }
         } else {
-            gsap.to(`.${classesSectionChoose['background-color']}`, {duration: .2, backgroundColor: 'transparent', ease: 'linear'});
+            colorChangeAnimation?.kill();
+            colorChangeAnimation = gsap.to(`.${classesSectionChoose['background-color']}`, {duration: .2, backgroundColor: 'transparent', ease: 'linear'});
         }
     }, [timelineProgress]);
 
