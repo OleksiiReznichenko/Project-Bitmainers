@@ -33,11 +33,7 @@ export default function Home() {
     const [XCharacterBox, setXCharacterBox] = useState<number>(0);
     const [timelineProgress, setTimelineProgress] = useState<number>(0);
     let timeline = gsap.timeline({});
-    let timeline2 = gsap.timeline({});
-    let timeline3 = gsap.timeline({});
     let ctx = gsap.context(() => {});
-    let ctx2 = gsap.context(() => {});
-    let ctx3 = gsap.context(() => {});
     let initialWindowWidth = 0;
 
     const [characterBoxYellowTranslate, setCharacterBoxYellowTranslate] = useState<number>(0);
@@ -102,7 +98,7 @@ export default function Home() {
                     pin: scrollTimelineTrigger,
                     // invalidateOnRefresh: true
                     onUpdate: self => {
-                        setTimelineProgress(self.progress)
+                        setTimelineProgress(self.progress);
                         // console.log(self.progress);
                     }
                 }
@@ -396,8 +392,10 @@ export default function Home() {
                 .to(`.${classesSectionForest['trees-background']}`, {duration: 1, x: -99 * vw, ease: 'linear'}, 'section-forest-animation-7')
                 .to(`.${classesSectionForest['grass-container']}`, {duration: 1, opacity: 0, scale: 2.5, x: -180 * vw, y: -12 * 8, ease: 'linear'}, 'section-forest-animation-7')
                 .fromTo(`.${classesSectionForest['scale-container-2']}`, 
-                {duration: 1, opacity: 0, scale: 1, x: '-85%', y: '-50%', ease: 'linear'}, 
-                {duration: 1, opacity: 1, scale: 1.9, x: '-50%', y: '-100%', ease: 'linear'}, 
+                // {duration: 1, opacity: 0, scale: 1, x: '-85%', y: '-50%', ease: 'linear'}, 
+                {duration: 1, opacity: 0, scale: 1, x: '-75%', y: '-50%', ease: 'linear'}, 
+                // {duration: 1, opacity: 1, scale: 1.9, x: '-50%', y: '-100%', ease: 'linear'}, 
+                {duration: 1, opacity: 1, scale: 2.2, x: '-50%', y: '-114%', ease: 'linear'}, 
                 'section-forest-animation-7')
                 // .fromTo(`.${classesSectionForest['scale-container-2']}`, 
                 // {duration: 1, opacity: 0, scale: 1, x: '-35%', ease: 'linear'}, 
@@ -412,7 +410,7 @@ export default function Home() {
                 .to(`.${classesSectionForest['tubes-container']}`, {duration: 1, opacity: 0, scale: 1.3, x: 30 * vw, y: 10 * vh, ease: 'linear'}, 'section-forest-animation-8')
                 .to(`.${classesSectionForest['tube-container-1']}`, {duration: 1, x: -30 * vw, ease: 'linear'}, 'section-forest-animation-8')
                 .to(`.${classesSectionForest['grass-container-2']}`, {duration: 1, scale: 2.5, x: -10 * vw, y: 5 * VhBackground, ease: 'linear'}, 'section-forest-animation-8')
-                .to(`.${classesSectionForest['scale-container-2']}`, {duration: 0, overflow: 'hidden', maxWidth: 100 * vw, ease: 'linear'}, 'section-forest-animation-8')
+                .to(`.${classesSectionForest['scale-container-2']}`, {duration: 0, delay: 1, overflow: 'hidden', maxWidth: 100 * vw, ease: 'linear'}, 'section-forest-animation-8')
                 .to(`.${classesSectionForest['scale-container-2']}`, {duration: 1, scale: 2.4, ease: 'linear'}, 'section-forest-animation-8')
                 .add('section-forest-animation-9')
                 .from(`.${classesSectionForest['playing-machine-container']}`, {duration: 0, display: 'none', ease: 'linear'}, 'section-forest-animation-9')
@@ -429,6 +427,7 @@ export default function Home() {
                 .to(`.${classesSectionForest['playing-machine']}`, {duration: 1.2, scale: .8, y: YAppearingInfo2Container - 4 * vh, ease: 'linear'}, 'section-forest-animation-10')
                 // .to(`.${classesSectionForest['outher-scale-container-2']}`, {duration: 1.2, y: YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 'section-forest-animation-10')
                 .fromTo(`.${classesSectionForest['outher-scale-container-2']}`,
+                // {duration: 1.2, x: '-50%', y: -50 * vh, ease: 'linear'}, 
                 {duration: 1.2, x: '-50%', y: -50 * vh, ease: 'linear'}, 
                 {duration: 1.2, x: '-50%', y: -50 * vh + YAppearingInfo2Container + YOuterScaleContainer2, ease: 'linear'}, 
                  'section-forest-animation-10')
@@ -759,6 +758,8 @@ export default function Home() {
         setCharacterBoxes(document.querySelector(`.${classesSectionChoose['character-boxes']}`) as HTMLElement);
         setVw(window.innerWidth / 100);
         setVh(window.innerHeight / 100);
+
+        console.log('LOADED');
 
         initAnimation();
         initialWindowWidth = window.innerWidth;

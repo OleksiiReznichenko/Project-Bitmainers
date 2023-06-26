@@ -10,7 +10,7 @@ export default function SectionForest() {
     return (
         <section className={classes['section-forest'] + ' section'}>
             <div className={classes['background-stars-container']}>
-                <Image quality={95}  src="/static/img/LandingPage/SectionForest/backgroundStars.png" alt="" 
+                <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/backgroundStars.png" alt="" 
                 // width={348}
                 // height={448}
                 fill
@@ -19,14 +19,14 @@ export default function SectionForest() {
             <div className={classes['scale-container']}>
                 <div className={classes['trees-background']}>
                     <div className={classes['trees-front-container']}>
-                        <Image quality={95}  src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
+                        <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
                         // width={348}
                         // height={448}
                         fill
                         className={classes['trees-front']} />
                     </div>
                     <div className={classes['trees-back-container']}>
-                        <Image quality={95}  src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
+                        <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
                         // width={348}
                         // height={448}
                         fill
@@ -39,14 +39,14 @@ export default function SectionForest() {
                     <div className={classes['scale-container-2']}>
                         <div className={classes['trees-background-2']}>
                             <div className={classes['trees-front-container']}>
-                                <Image quality={95}  src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
+                                <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
                                 // width={348}
                                 // height={448}
                                 fill
                                 className={classes['trees-front']} />
                             </div>
                             <div className={classes['trees-back-container']}>
-                                <Image quality={95}  src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
+                                <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
                                 // width={348}
                                 // height={448}
                                 fill

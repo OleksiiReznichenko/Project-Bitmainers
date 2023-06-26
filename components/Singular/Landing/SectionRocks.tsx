@@ -38,7 +38,7 @@ export default function SectionRocks() {
                             className={classes['rocks-top']} />
                         </div>
                         <div className={classes['background-rocks-container']}>
-                            <Image quality={95}  src='/static/img/LandingPage/SectionRocks/backgroundRocks.png' alt=''
+                            <Image quality={95} priority={true} src='/static/img/LandingPage/SectionRocks/backgroundRocks.png' alt=''
                             fill
                             className={classes['background-rocks']} />
                         </div>
