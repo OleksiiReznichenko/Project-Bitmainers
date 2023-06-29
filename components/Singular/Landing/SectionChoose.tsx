@@ -3,13 +3,9 @@ import classes from '@/styles/componentsStyles/Landing/sectionChoose.module.scss
 import { gsap } from 'gsap';
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import type { ActiveCharacter } from '@/types/ActiveCharacter.ts';
-
-// type ActiveCharacter = 'red' | 'yellow' | 'green';
 
 export default function SectionChoose() {
     const dispatch = useDispatch();
-    // const [activeCharacter, setActiveCharacter] = useState<ActiveCharacter>('yellow');
     const characterBoxes = useRef<HTMLDivElement>(null);
     const sectionChooseAnimationStarted = useSelector(selectSectionChooseAnimationStarted);
     const activeCharacter = useSelector(selectActiveChooseCharacter);
@@ -49,13 +45,8 @@ export default function SectionChoose() {
                 x = -(containerWidth - window.innerWidth);
             }
     
-            // console.log('containerWidth', containerWidth);
-            // console.log('X', x);
-    
             gsap.to(`.${classes['character-boxes']}`, { duration: .8, x: x});
         } else {
-            // let characterBoxHeight = 50 * vh + 40 * vh + 55 * vh;
-    
             const containerHeight = 40 * vh + 40 * vh + 55 * vh - 14 * vh - 13 * vh;
 
             if (containerHeight <= window.innerHeight) return;
@@ -69,10 +60,6 @@ export default function SectionChoose() {
             } else if (activeCharacter === 'green') {
                 y = -(containerHeight - window.innerHeight);
             }
-    
-            // console.log('window.innerHeight', window.innerHeight);
-            // console.log('containerHeight', containerHeight);
-            // console.log('y', y);
     
             gsap.to(`.${classes['character-boxes']}`, { duration: .8, y: y});
         }
@@ -88,13 +75,10 @@ export default function SectionChoose() {
 
         if (characterBox?.classList.contains('red')) {
             dispatch(baseActions.selectActiveChooseCharacter({character: 'red'}));
-            // setActiveCharacter('red');
         } else if (characterBox?.classList.contains('yellow')) {
             dispatch(baseActions.selectActiveChooseCharacter({character: 'yellow'}));
-            // setActiveCharacter('yellow');
         } else if (characterBox?.classList.contains('green')) {
             dispatch(baseActions.selectActiveChooseCharacter({character: 'green'}));
-            // setActiveCharacter('green');
         }
 
     };
@@ -102,12 +86,6 @@ export default function SectionChoose() {
     useEffect(() => {
         scrollToCharacter();
     }, [activeCharacter]);
-
-    useEffect(() => {
-        // dispatch(baseActions.selectActiveChooseCharacter({character: 'yellow'}));
-
-        // setActiveCharacter('yellow');
-    }, [sectionChooseAnimationStarted]);
 
     return (
         <section className={classes['section-choose'] + ' section'}>

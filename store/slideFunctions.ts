@@ -6,7 +6,6 @@ interface SlideFunctionParams {
     target: HTMLElement;
     durationDynamic?: number;
 }
-// {target, parent, duration}: SlideFunctionParams
 
 // SLIDE UP FUNCTION
 const slideUpStarter = ({target, durationDynamic}: SlideFunctionParams): void => {

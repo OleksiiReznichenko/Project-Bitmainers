@@ -48,38 +48,32 @@ const currentSections: CurrentSection[] = [
     }
 ];
 
-// const accountWalletQuestions: FaqQuestion[] = ;
-
-// const gameChatQuestions: FaqQuestion[] = ;
-
-// const fairplaySecurityQuestions: FaqQuestion[] = ;
-
 const faqQuestions: FaqQuestions[] = [
     {
         id: 'accountWallet',
         questions: [
             {
-                id: 'q1',
+                id: 'accountWalletQ1',
                 question: 'How do i make an account?',
                 answer: 'To make an account, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q2',
+                id: 'accountWalletQ2',
                 question: 'How do i make an account?',
                 answer: 'To make an account, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q3',
+                id: 'accountWalletQ3',
                 question: 'How do i make an account?',
                 answer: 'To make an account, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q4',
+                id: 'accountWalletQ4',
                 question: 'How do i make an account?',
                 answer: 'To make an account, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q5',
+                id: 'accountWalletQ5',
                 question: 'How do i make an account?',
                 answer: 'To make an account, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
@@ -89,27 +83,27 @@ const faqQuestions: FaqQuestions[] = [
         id: 'gameChat',
         questions: [
             {
-                id: 'q1',
+                id: 'gameChatQ1',
                 question: 'How do i use a game chat?',
                 answer: 'To use a game chat, click the register button on the top right of the screen. Making a game chat is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q2',
+                id: 'gameChatQ2',
                 question: 'How do i use a game chat?',
                 answer: 'To use a game chat, click the register button on the top right of the screen. Making a game chat is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q3',
+                id: 'gameChatQ3',
                 question: 'How do i use a game chat?',
                 answer: 'To use a game chat, click the register button on the top right of the screen. Making a game chat is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q4',
+                id: 'gameChatQ4',
                 question: 'How do i use a game chat?',
                 answer: 'To use a game chat, click the register button on the top right of the screen. Making a game chat is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q5',
+                id: 'gameChatQ5',
                 question: 'How do i use a game chat?',
                 answer: 'To use a game chat, click the register button on the top right of the screen. Making a game chat is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
@@ -119,27 +113,27 @@ const faqQuestions: FaqQuestions[] = [
         id: 'fairplaySecurity',
         questions: [
             {
-                id: 'q1',
+                id: 'fairplaySecurityQ1',
                 question: 'How does fairplay security works?',
                 answer: 'Fairplay security works like that, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q2',
+                id: 'fairplaySecurityQ2',
                 question: 'How does fairplay security works?',
                 answer: 'Fairplay security works like that, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q3',
+                id: 'fairplaySecurityQ3',
                 question: 'How does fairplay security works?',
                 answer: 'Fairplay security works like that, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q4',
+                id: 'fairplaySecurityQ4',
                 question: 'How does fairplay security works?',
                 answer: 'Fairplay security works like that, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
             {
-                id: 'q5',
+                id: 'fairplaySecurityQ5',
                 question: 'How does fairplay security works?',
                 answer: 'Fairplay security works like that, click the register button on the top right of the screen. Making an account is super simple, all you need is a username and a good password, that’s it! For users who don’t care so much about their anonymity, we also support social logins via Google and Telegram',
             },
@@ -191,16 +185,15 @@ export default function FaqPage() {
         if (title) {
             setCurrentTitle(title);
         }
+
     }, [currentSection]);
 
     // TOGGLE EVENT
     const toggleEvent = (event: React.MouseEvent): void => {
         const target = event.target as HTMLElement;
         const parent = target?.closest('.toggle-container');
-        // const titleContainer = target?.closest('.title-container');
         const descriptionContainer = parent?.querySelector('.description-container') as HTMLElement;
         
-        // titleContainer && 
         if (parent && descriptionContainer && !parent.classList.contains('animating')) {
             const arrow = parent?.querySelector(`.${classes['arrow']}`);
     

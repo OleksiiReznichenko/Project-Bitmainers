@@ -13,8 +13,6 @@ export default function Preloader() {
         const vw = window.innerWidth / 100;
     
         preloaderTimeline
-        // .from('.preloader .face', {duration: 1.25, opacity: .5, height: '60rem', y: '50rem'}, 0)
-        // .to('.preloader-1', {duration: .5, delay: 1.5, autoAlpha: 0}, 0)
         .to(`.${classes['line-to-top']}`, {duration: .1, delay: 1, height: '50%'}, 0)
         .to(`.${classes['line-to-right']}`, {duration: .1, delay: 1, width: '50%'}, 0)
         .to(`.${classes.percent}`, {duration: .1, delay: 2.2, color: '#FFC700'}, 0)

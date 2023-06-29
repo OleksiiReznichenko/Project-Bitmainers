@@ -19,7 +19,6 @@ export default function BaseLayout(props: PropsWithChildren) {
             className=""
         >
             {props.children}
-            {/* <div className="page">{props.children}</div> */}
         </motion.main>
     )
 }

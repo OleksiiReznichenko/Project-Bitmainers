@@ -42,7 +42,7 @@ export default function NotFoundPage() {
                     <Link href='/' className={'btn-yellow ' + classes.button}>Home</Link>
                 </div>
                 <div className={classes['character-container']}>
-                    <Image quality={95}  src="/static/img/ErrorPage/character.png" alt="" 
+                    <Image quality={95} src="/static/img/ErrorPage/character.png" alt="" 
                     // width={348}
                     // height={448}
                     ref={character}
@@ -50,7 +50,7 @@ export default function NotFoundPage() {
                     className={classes.character} />
                 </div>
                 <div className={classes['grass-container']}>
-                    <Image quality={95}  src="/static/img/ErrorPage/grass.png" alt="" 
+                    <Image quality={95} src="/static/img/ErrorPage/grass.png" alt="" 
                     // width={2000}
                     // height={200}
                     fill
@@ -58,13 +58,13 @@ export default function NotFoundPage() {
                 </div>
                 <div className={classes['background-container']}>
                     {!isMobileBackground && 
-                    <Image quality={95}  src="/static/img/ErrorPage/background.jpg" alt="" 
+                    <Image quality={95} src="/static/img/ErrorPage/background.jpg" alt="" 
                     // width={1920}
                     // height={1080}
                     fill
                     className={classes.background} />}
                     {isMobileBackground && 
-                    <Image quality={95}  src="/static/img/ErrorPage/backgroundMobile.jpg" alt="" 
+                    <Image quality={95} src="/static/img/ErrorPage/backgroundMobile.jpg" alt="" 
                     // width={1920}
                     // height={1080}
                     fill

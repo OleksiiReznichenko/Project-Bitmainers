@@ -1,15 +1,3 @@
-// import { configureStore, createSlice } from '@reduxjs/toolkit';
-// import {createStore} from 'redux';
-
-// // const store = createStore(counterSlice.reducer);
-// const store = configureStore({
-//     reducer: {
-//         counter: counterSliceReducer,
-//     }
-// });
-
-// export default store;
-
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import baseSliceReducer from './base';
 import slideFunctionsReducer from './slideFunctions';

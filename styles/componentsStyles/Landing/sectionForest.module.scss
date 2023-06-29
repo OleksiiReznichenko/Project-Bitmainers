@@ -20,9 +20,6 @@
     .scale-container-2,
     .outher-scale-container-2,
     .outer-outher-scale-container-2 {
-        // position: absolute;
-        // top: 0;
-        // left: 0;
         @include abs-center;
         z-index: 3;
     }
@@ -91,8 +88,6 @@
     }
     
     .trees-background-2 {
-        // position: fixed;
-        // overflow: hidden;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -121,7 +116,6 @@
     .red-character-container {
         position: absolute;
         bottom: 10px;
-        // left: 44%;
         left: 50%;
         transform: translateX(-50%);
         z-index: 100;
@@ -129,7 +123,6 @@
         .miner,
         .character {
             width: 17rem;
-            // transform: translateX(-14vw);
 
             @media only screen and (max-width: 850px) {
                 width: 160px;
@@ -160,7 +153,6 @@
     .crystal-container {
         position: absolute;
         bottom: 20rem;
-        // left: 100vw;
         left: 50%;
         transform: translateX(-50%);
         z-index: 30;
@@ -179,19 +171,13 @@
         top: 26%;
         z-index: 200;
         text-align: center;
-        // width: 130rem;
         width: 100%;
         z-index: 400;
-
-        @media only screen and (max-width: 850px) {
-            // width: 290px;
-        }
 
         .title {
             display: flex;
             align-items: center;
             justify-content: center;
-            // font-size: 11.25rem;
             font-weight: 900;
             font-size: 6.5vw;
             margin-bottom: 4.75rem;
@@ -224,7 +210,6 @@
 
             .yellow {
                 display: inline-block;
-                // align-items: center;
                 margin-left: 2.5rem;
                 position: relative;
                 padding: 0 4.2rem 0 3.5rem;
@@ -240,7 +225,6 @@
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
-                    // width: 4.5rem;
                     width: 7.35rem;
 
                     @media only screen and (max-width: 850px) {
@@ -301,7 +285,6 @@
 
         .button-start {
             position: relative;
-            // filter: drop-shadow(0px 2.5px 12px rgba(240, 172, 29, 0.7)) drop-shadow(0px 2.5px 61px rgba(255, 255, 255, 0.5));
 
             &:hover {
                 transform: scale(1.02);
@@ -339,7 +322,6 @@
         top: 32%;
         z-index: 200;
         text-align: center;
-        // width: 130rem;
         width: 90vw;
         z-index: 1;
 
@@ -353,13 +335,8 @@
         }
 
         .title {
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
-            // font-size: 11.25rem;
             font-weight: 900;
             line-height: 1.15;
-            // font-size: 6.5vw;
             margin-bottom: 1.75rem;
 
             @media only screen and (max-width: 850px) {
@@ -368,8 +345,6 @@
             }
 
             .white {
-                // font-size: 10.5rem;
-                // font-size: 6.5vw;
                 font-size: 6vw;
 
                 @media only screen and (max-width: 850px) {
@@ -378,11 +353,8 @@
             }
 
             .yellow {
-                // font-size: 17rem;
-                // font-size: 10.5vw;
                 font-size: 9.6vw;
                 display: inline-block;
-                // align-items: center;
                 margin-left: 2.5rem;
                 position: relative;
                 padding: 0 4.2rem 0 3.5rem;
@@ -399,7 +371,6 @@
                     position: absolute;
                     top: 53%;
                     transform: translateY(-50%);
-                    // width: 4.5rem;
                     width: 7.35rem;
 
                     @media only screen and (max-width: 850px) {
