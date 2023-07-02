@@ -6,8 +6,8 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" type="image/png" href="/favicon.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-        <title>TonMiners - Next-Gen NFT Game on TON Blockchain</title>
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+        <title>TonMiners - Next-Gen NFT Game on TON Blockchain</title> */}
 
         <meta name="title" content="TonMiners - Next-Gen NFT Game on TON Blockchain" />
         <meta name="keywords"
