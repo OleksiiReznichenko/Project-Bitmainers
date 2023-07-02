@@ -7,11 +7,9 @@ export default function Preloader() {
     const preloaderTimeline = gsap.timeline({});
     const [percent, setPercent] = useState<number>(0);
 
-    // END PRELOADER ANIMATION AND CLOSE IT
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // PRELOADER ANIMATION
     const initAnimation = (): void => {
-        const vh = window.innerHeight / 100;
-        const vw = window.innerWidth / 100;
-    
         preloaderTimeline
         .to(`.${classes['line-to-top']}`, {duration: .1, delay: 1, height: '50%'}, 0)
         .to(`.${classes['line-to-right']}`, {duration: .1, delay: 1, width: '50%'}, 0)
@@ -23,6 +21,8 @@ export default function Preloader() {
         .to("html", { duration: 0, overflowY: "visible", delay: 3 }, 0);
     };
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // SET PRELOADER PERCENT AND INITIAL OVERFLOW-Y OF HTML AND INIT ANIMATION
     useEffect(() => {
         const html = document.querySelector('html')!;
         html.style.overflowY = 'hidden';

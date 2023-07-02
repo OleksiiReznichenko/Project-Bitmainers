@@ -5,15 +5,17 @@ import { useEffect } from 'react';
 
 
 export default function Header() {
-    let ctx = gsap.context(() => {})
+    let ctx = gsap.context(() => {});
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GSAP INFINITE ANIMATIONS
     const initBoxesAnimation = (): void => {
         ctx = gsap.context(() => {
-            gsap.to(`.${classes['box-1']}`, {duration: 2, rotate: 15, repeat: -1, yoyo: true, ease: Power1.easeInOut})
-            gsap.to(`.${classes['box-2']}`, {duration: 2, rotate: -35, repeat: -1, yoyo: true, ease: Power1.easeInOut})
-            gsap.to(`.${classes['box-5']}`, {duration: 2, rotate: -25, repeat: -1, yoyo: true, ease: Power1.easeInOut})
-            gsap.to(`.${classes['box-left']}`, {duration: 2, rotate: 15, repeat: -1, yoyo: true, ease: Power1.easeInOut})
-            gsap.to(`.${classes['box-right']}`, {duration: 2, rotate: -20, repeat: -1, yoyo: true, ease: Power1.easeInOut})
+            gsap.to(`.${classes['box-1']}`, {duration: 2, rotate: 15, repeat: -1, yoyo: true, ease: Power1.easeInOut});
+            gsap.to(`.${classes['box-2']}`, {duration: 2, rotate: -35, repeat: -1, yoyo: true, ease: Power1.easeInOut});
+            gsap.to(`.${classes['box-5']}`, {duration: 2, rotate: -25, repeat: -1, yoyo: true, ease: Power1.easeInOut});
+            gsap.to(`.${classes['box-left']}`, {duration: 2, rotate: 15, repeat: -1, yoyo: true, ease: Power1.easeInOut});
+            gsap.to(`.${classes['box-right']}`, {duration: 2, rotate: -20, repeat: -1, yoyo: true, ease: Power1.easeInOut});
         });
     };
 
@@ -68,20 +70,16 @@ export default function Header() {
                     <p className={classes.paragraph}>and start mining for <br className="mobile" /> NFTs and coins in the <br className="mobile" /> upcoming game</p>
                 </div>
                 <div className={classes['inner-container']}>
-                    {/* <div className={classes.clouds}> */}
-                        <img src='/static/img/LandingPage/Header/cloud1.png' 
-                        alt='' className={classes['cloud-1']} />
-                        <img src='/static/img/LandingPage/Header/cloud2.png' 
-                        alt='' className={classes['cloud-2']} />
-                        <img src='/static/img/LandingPage/Header/cloud3.png' 
-                        alt='' className={classes['cloud-3']} />
-                        <img src='/static/img/LandingPage/Header/cloud4.png' 
-                        alt='' className={classes['cloud-4'] + ' desktop'} />
-                        <img src='/static/img/LandingPage/Header/cloud5.png' 
-                        alt='' className={classes['cloud-5'] + ' mobile'} />
-                    {/* </div> */}
-                    {/* <img src='/static/img/LandingPage/Header/cloudBackground.png' 
-                    alt='' className={classes['cloud-background-left']} /> */}
+                    <img src='/static/img/LandingPage/Header/cloud1.png' 
+                    alt='' className={classes['cloud-1']} />
+                    <img src='/static/img/LandingPage/Header/cloud2.png' 
+                    alt='' className={classes['cloud-2']} />
+                    <img src='/static/img/LandingPage/Header/cloud3.png' 
+                    alt='' className={classes['cloud-3']} />
+                    <img src='/static/img/LandingPage/Header/cloud4.png' 
+                    alt='' className={classes['cloud-4'] + ' desktop'} />
+                    <img src='/static/img/LandingPage/Header/cloud5.png' 
+                    alt='' className={classes['cloud-5'] + ' mobile'} />
                     <img src="/static/img/LandingPage/Header/box1.png" alt="" className={classes['box-1'] + ' desktop'} />
                     <img src="/static/img/LandingPage/Header/box2.png" alt="" className={classes['box-2'] + ' desktop'} />
                     <div className={classes.info}>
@@ -97,7 +95,6 @@ export default function Header() {
                     <img src="/static/img/LandingPage/Header/box5.png" alt="" className={classes['box-5'] + ' desktop'} />
                     <div className={classes['characters-left']}>
                         <img src="/static/img/LandingPage/Header/headerCharacter1.png" alt="" className={classes['character-1']} />
-                        {/* <img src="/static/img/LandingPage/Header/headerCharacter2.png" alt="" className={classes['character-2']} /> */}
                         <img src="/static/img/LandingPage/Header/headerCharacter2.png" alt="" className={classes['character-2']} />
                         <img src="/static/img/LandingPage/Header/headerCharacter3.png" alt="" className={classes['character-3']} />
                     </div>

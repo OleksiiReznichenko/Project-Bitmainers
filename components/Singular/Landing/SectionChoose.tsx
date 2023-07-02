@@ -6,10 +6,14 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function SectionChoose() {
     const dispatch = useDispatch();
-    const characterBoxes = useRef<HTMLDivElement>(null);
     const sectionChooseAnimationStarted = useSelector(selectSectionChooseAnimationStarted);
     const activeCharacter = useSelector(selectActiveChooseCharacter);
-
+    
+    // DOM ELEMENTS
+    const characterBoxes = useRef<HTMLDivElement>(null);
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // SCROLL TO ACTIVE CHARACTER
     const scrollToCharacter = (): void => {
         if (window.innerWidth > 2150 || sectionChooseAnimationStarted) return;
 
@@ -65,6 +69,8 @@ export default function SectionChoose() {
         }
     };
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // CHOSE ACTIVE CHARACTER ON MOUSEMOVE
     const chooseCharacter = (event: React.MouseEvent): void => {
         if (sectionChooseAnimationStarted) return;
         const target = event.target as HTMLElement;
@@ -91,7 +97,6 @@ export default function SectionChoose() {
         <section className={classes['section-choose'] + ' section'}>
             <div className={classes['background-color']}></div>
             <div className={classes['scale-container']}>
-                {/* <img src="/static/svg/LandingPage/grabber.svg" alt="" className={classes.grabber} /> */}
                 <img src="/static/img/LandingPage/SectionChoose/grabber.png" alt="" className={classes.grabber} />
                 <div onMouseOver={chooseCharacter} className={classes['character-boxes']} ref={characterBoxes}>
                     <div className={classes['character-box-red'] + ' ' + classes['character-box'] + ' red ' + (activeCharacter === 'red' ? classes.active : '')}>
@@ -111,7 +116,6 @@ export default function SectionChoose() {
                             <div className={classes['black-layer']}></div>
                             <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
                             <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
-                            {/* <div className={classes.shadow + ' ' + classes['shadow-right'] + ' mobile'}></div> */}
                             <div className={classes['borders-container']}>
                                 <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
                                 <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
@@ -126,45 +130,40 @@ export default function SectionChoose() {
                             </div>
                         </div>
                     </div>
-                    {/* <div className={classes['character-box-yellow-container'] + ' ' + classes['character-box-container']}> */}
-                        <div className={classes['character-box-yellow'] + ' ' + classes['character-box'] + ' yellow ' + (activeCharacter === 'yellow' ? classes.active : '')}>
-                            <div className={classes['inner-container']}>
-                                {/* <div className={classes['scale-container']}> */}
-                                <div className={classes['character-container']}>
-                                        <img src="/static/img/LandingPage/SectionChoose/characterYellow.png" alt="" className={classes.character} />
-                                    </div>
-                                    <img src="/static/img/LandingPage/SectionChoose/boxPartTop.png" alt="" className={classes['box-part-top']} />
-                                    <img src="/static/img/LandingPage/SectionChoose/boxPartBottom.png" alt="" className={classes['box-part-bottom']} />
-                                {/* </div> */}
-                                <div className={classes.info + ' ' + classes['info-left']}>
-                                    <strong className={classes.name}>Man</strong>
-                                    <div className={classes['flex-container']}>
-                                        <div className={classes['info-text']}>NEW NFT COLLECTION.</div>
-                                        <div className={classes['info-text']}>CLASS: LEGENDARY</div>
-                                    </div>
-                                </div>
-                                <img src="/static/img/LandingPage/SectionChoose/banana1.png" alt="" className={classes['banana-1'] + ' desktop'} />
-                                <img src="/static/img/LandingPage/SectionChoose/banana2.png" alt="" className={classes['banana-2'] + ' desktop'} />
-                                <img src="/static/img/LandingPage/SectionChoose/banana3.png" alt="" className={classes['banana-3'] + ' desktop'} />
-                                <div className={classes['black-layer']}></div>
-                                <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
-                                <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
-                                {/* <div className={classes.shadow + ' ' + classes['shadow-left'] + ' mobile'}></div> */}
-                                <div className={classes['borders-container']}>
-                                    <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
-                                    <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
-                                    <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
-                                    <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
-                                </div>
-                                <div className={classes['borders-bold-container']}>
-                                    <img src="/static/svg/LandingPage/borderBoldBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
-                                    <img src="/static/svg/LandingPage/borderBoldBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
-                                    <img src="/static/svg/LandingPage/borderBoldTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
-                                    <img src="/static/svg/LandingPage/borderBoldTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                    <div className={classes['character-box-yellow'] + ' ' + classes['character-box'] + ' yellow ' + (activeCharacter === 'yellow' ? classes.active : '')}>
+                        <div className={classes['inner-container']}>
+                            <div className={classes['character-container']}>
+                                <img src="/static/img/LandingPage/SectionChoose/characterYellow.png" alt="" className={classes.character} />
+                            </div>
+                            <img src="/static/img/LandingPage/SectionChoose/boxPartTop.png" alt="" className={classes['box-part-top']} />
+                            <img src="/static/img/LandingPage/SectionChoose/boxPartBottom.png" alt="" className={classes['box-part-bottom']} />
+                            <div className={classes.info + ' ' + classes['info-left']}>
+                                <strong className={classes.name}>Man</strong>
+                                <div className={classes['flex-container']}>
+                                    <div className={classes['info-text']}>NEW NFT COLLECTION.</div>
+                                    <div className={classes['info-text']}>CLASS: LEGENDARY</div>
                                 </div>
                             </div>
+                            <img src="/static/img/LandingPage/SectionChoose/banana1.png" alt="" className={classes['banana-1'] + ' desktop'} />
+                            <img src="/static/img/LandingPage/SectionChoose/banana2.png" alt="" className={classes['banana-2'] + ' desktop'} />
+                            <img src="/static/img/LandingPage/SectionChoose/banana3.png" alt="" className={classes['banana-3'] + ' desktop'} />
+                            <div className={classes['black-layer']}></div>
+                            <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
+                            <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
+                            <div className={classes['borders-container']}>
+                                <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
+                                <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
+                                <img src="/static/svg/LandingPage/borderTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
+                                <img src="/static/svg/LandingPage/borderTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                            </div>
+                            <div className={classes['borders-bold-container']}>
+                                <img src="/static/svg/LandingPage/borderBoldBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
+                                <img src="/static/svg/LandingPage/borderBoldBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />
+                                <img src="/static/svg/LandingPage/borderBoldTopLeft.svg" alt="" className={classes['border-top-left'] + ' ' + classes.border + ' desktop'} />
+                                <img src="/static/svg/LandingPage/borderBoldTopRight.svg" alt="" className={classes['border-top-right'] + ' ' + classes.border + ' desktop'} />
+                            </div>
                         </div>
-                    {/* </div> */}
+                    </div>
                     <div className={classes['character-box-green'] + ' ' + classes['character-box'] + ' green ' + (activeCharacter === 'green' ? classes.active : '')}>
                         <div className={classes['inner-container']}>
                             <div className={classes['character-container']}>
@@ -182,7 +181,6 @@ export default function SectionChoose() {
                             <div className={classes['black-layer']}></div>
                             <div className={classes.shadow + ' ' + classes['shadow-bottom'] + ' desktop'}></div>
                             <div className={classes.shadow + ' ' + classes['shadow-bottom-2'] + ' desktop'}></div>
-                            {/* <div className={classes.shadow + ' ' + classes['shadow-right'] + ' mobile'}></div> */}
                             <div className={classes['borders-container']}>
                                 <img src="/static/svg/LandingPage/borderBottomLeft.svg" alt="" className={classes['border-bottom-left'] + ' ' + classes.border + ' desktop'} />
                                 <img src="/static/svg/LandingPage/borderBottomRight.svg" alt="" className={classes['border-bottom-right'] + ' ' + classes.border + ' desktop'} />

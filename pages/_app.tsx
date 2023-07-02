@@ -30,9 +30,6 @@ function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     // CLOSE NAVIGATION MENU ON ROUTE CHANGE
     dispatch(baseActions.closeMobileNavOpenedIndicator());
-
-    // CHECK IS TOUCH DEVICE
-    dispatch(baseActions.checkIsTouchDevice());
   }, [router]);
 
   useEffect(() => {

@@ -1,8 +1,6 @@
 import { selectSectionChooseAnimationStarted } from '@/store/base';
 import classes from '@/styles/componentsStyles/Landing/sectionForest.module.scss';
 import Image from 'next/image';
-import React, { useEffect, useRef, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 export default function SectionForest() {
     
@@ -11,8 +9,6 @@ export default function SectionForest() {
         <section className={classes['section-forest'] + ' section'}>
             <div className={classes['background-stars-container']}>
                 <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/backgroundStars.png" alt="" 
-                // width={348}
-                // height={448}
                 fill
                 className={classes['background-stars']} />
             </div>
@@ -20,42 +16,32 @@ export default function SectionForest() {
                 <div className={classes['trees-background']}>
                     <div className={classes['trees-front-container']}>
                         <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
-                        // width={348}
-                        // height={448}
                         fill
                         className={classes['trees-front']} />
                     </div>
                     <div className={classes['trees-back-container']}>
                         <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
-                        // width={348}
-                        // height={448}
                         fill
                         className={classes['trees-back']} />
                     </div>
                 </div>
             </div>
-            {/* <div className={classes['outer-outher-scale-container-2']}> */}
-                <div className={classes['outher-scale-container-2']}>
-                    <div className={classes['scale-container-2']}>
-                        <div className={classes['trees-background-2']}>
-                            <div className={classes['trees-front-container']}>
-                                <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
-                                // width={348}
-                                // height={448}
-                                fill
-                                className={classes['trees-front']} />
-                            </div>
-                            <div className={classes['trees-back-container']}>
-                                <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
-                                // width={348}
-                                // height={448}
-                                fill
-                                className={classes['trees-back']} />
-                            </div>
+            <div className={classes['outher-scale-container-2']}>
+                <div className={classes['scale-container-2']}>
+                    <div className={classes['trees-background-2']}>
+                        <div className={classes['trees-front-container']}>
+                            <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/frontTrees.png" alt="" 
+                            fill
+                            className={classes['trees-front']} />
+                        </div>
+                        <div className={classes['trees-back-container']}>
+                            <Image quality={95} priority={true} src="/static/img/LandingPage/SectionForest/backgroundTrees.png" alt="" 
+                            fill
+                            className={classes['trees-back']} />
                         </div>
                     </div>
                 </div>
-            {/* </div> */}
+            </div>
             <div className={classes['character-container'] + ' ' + classes['yellow-character-container']}>
                 <img src="/static/img/LandingPage/SectionForest/characterMiner.png" alt="" 
                 className={classes.character} />
@@ -120,8 +106,6 @@ export default function SectionForest() {
             </div>
             <div className={classes['playing-machine-container']}>
                 <Image quality={95}  src="/static/img/LandingPage/SectionRocks/playingMachine.png" alt="" 
-                // width={348}
-                // height={448}
                 fill
                 className={classes['playing-machine']} />
             </div>

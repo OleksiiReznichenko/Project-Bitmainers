@@ -6,8 +6,10 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from "gsap";
 
 export default function NotFoundPage() {
-    const character = useRef<HTMLImageElement>(null);
     const [isMobileBackground, setIsMobileBackground] = useState<boolean>(false);
+
+    // DOM ELEMENTS
+    const character = useRef<HTMLImageElement>(null);
 
     // ON WINDOW RESIZE
     const checkIsMobileBackground = (): void => {
@@ -43,30 +45,22 @@ export default function NotFoundPage() {
                 </div>
                 <div className={classes['character-container']}>
                     <Image quality={95} src="/static/img/ErrorPage/character.png" alt="" 
-                    // width={348}
-                    // height={448}
                     ref={character}
                     fill
                     className={classes.character} />
                 </div>
                 <div className={classes['grass-container']}>
                     <Image quality={95} src="/static/img/ErrorPage/grass.png" alt="" 
-                    // width={2000}
-                    // height={200}
                     fill
                     className={classes.grass} />
                 </div>
                 <div className={classes['background-container']}>
                     {!isMobileBackground && 
                     <Image quality={95} src="/static/img/ErrorPage/background.jpg" alt="" 
-                    // width={1920}
-                    // height={1080}
                     fill
                     className={classes.background} />}
                     {isMobileBackground && 
                     <Image quality={95} src="/static/img/ErrorPage/backgroundMobile.jpg" alt="" 
-                    // width={1920}
-                    // height={1080}
                     fill
                     className={classes.background} />}
                 </div>

@@ -1,6 +1,6 @@
 import TransitionWrapper from '@/components/Singular/App/TransitionWrapper';
 import Header from '@/components/Singular/Landing/Header';
-import { baseActions, selectActiveChooseCharacter, selectIsTouchDevice } from '@/store/base';
+import { baseActions, selectActiveChooseCharacter } from '@/store/base';
 import classes from '@/styles/pagesStyles/landing.module.scss';
 import classesHeader from '@/styles/componentsStyles/Landing/header.module.scss';
 import classesSectionChoose from '@/styles/componentsStyles/Landing/sectionChoose.module.scss';
@@ -14,6 +14,7 @@ import SectionChoose from '@/components/Singular/Landing/SectionChoose';
 import SectionForest from '@/components/Singular/Landing/SectionForest';
 import SectionRocks from '@/components/Singular/Landing/SectionRocks';
 import Footer from '@/components/Singular/App/Footer';
+import { isTouchDevice } from '@/store';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,17 +25,16 @@ let colorChangeAnimation: any;
 
 export default function Home() {
     const dispatch = useDispatch();
-    const isTouchDevice = useSelector(selectIsTouchDevice);
     const activeCharacter = useSelector(selectActiveChooseCharacter);
     const [vh, setVh] = useState<number>(10.8);
     const [vw, setVw] = useState<number>(19.2);
-    const [baseFontSize, setBaseFontSize] = useState<number>(10);
     const [characterBoxColor, setCharacterBoxColor] = useState<string>('#FFB23F');
     const [timelineProgress, setTimelineProgress] = useState<number>(0);
     let timeline = gsap.timeline({});
     let ctx = gsap.context(() => {});
     let initialWindowWidth = 0;
 
+    // DOM ELEMENTS
     const [characterBoxYellow, setCharacterBoxYellow] = useState<null | HTMLElement>(null);
     const [characterBoxYellowInner, setCharacterBoxYellowInner] = useState<null | HTMLElement>(null);
     const [characterBoxGreen, setCharacterBoxGreen] = useState<null | HTMLElement>(null);
@@ -43,6 +43,8 @@ export default function Home() {
     const [characterGreen, setCharacterGreen] = useState<null | HTMLElement>(null);
     const [characterRed, setCharacterRed] = useState<null | HTMLElement>(null);
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // ON WINDOW RESIZE
     const onResize = (): void => {
         if (!initialWindowWidth) return;
         // RELOAD PAGE ON RESIZE
@@ -51,6 +53,8 @@ export default function Home() {
         location.reload();
     };
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // GSAP ANIMATION SETTINGS
     const initAnimation = (): void => {
         let windowWidth = window.innerWidth;
         let windowHeight = window.innerHeight;
@@ -59,14 +63,8 @@ export default function Home() {
         // CSS UNITS IN PIXELS
         const baseFontSizeString = getComputedStyle(document.querySelector('html')!).fontSize;
         const baseFontSize = +baseFontSizeString.substring(0, baseFontSizeString.length - 2);
-        setBaseFontSize(baseFontSize);
         let vw = windowWidth / 100;
         let vh = windowHeight / 100;
-        // let vwRestricted = windowWidth / 100;
-    
-        // if (window.outerWidth > 1950) {
-        //     vwRestricted = 1920 / 100;
-        // }
     
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         // TIMELINE END
@@ -76,7 +74,7 @@ export default function Home() {
             scrollTimelineEnd = 'top -1700%';
         }
     
-        if (window.outerWidth < 850 || isTouchDevice) {
+        if (window.outerWidth < 850 || isTouchDevice()) {
             scrollTimelineEnd = 'top -10000px';
         }
     
@@ -704,6 +702,7 @@ export default function Home() {
     };
 
     useEffect(() => {
+        // SELECT DOM ELEMENTS
         setCharacterBoxYellow(document.querySelector(`.${classesSectionChoose['character-box-yellow']}`) as HTMLElement);
         setCharacterBoxYellowInner(document.querySelector(`.${classesSectionChoose['character-box-yellow']} .${classesSectionChoose['inner-container']}`) as HTMLElement);
         setCharacterBoxGreen(document.querySelector(`.${classesSectionChoose['character-box-green']}`) as HTMLElement);
@@ -711,6 +710,8 @@ export default function Home() {
         setCharacterYellow(document.querySelector(`.${classesSectionForest['yellow-character-container']}`) as HTMLElement);
         setCharacterGreen(document.querySelector(`.${classesSectionForest['green-character-container']}`) as HTMLElement);
         setCharacterRed(document.querySelector(`.${classesSectionForest['red-character-container']}`) as HTMLElement);
+
+        // SET CSS UNITS IN PIXELS
         setVw(window.innerWidth / 100);
         setVh(window.innerHeight / 100);
 
@@ -726,6 +727,8 @@ export default function Home() {
         };
     }, []);
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // SET INLINE STYLES BASED ON ACTIVE CHARACTER TO MAKE CHARACTER SELECTION ANIMATION
     useEffect(() => {
         if (!characterBoxYellow || !characterBoxYellowInner || !characterBoxGreen || !characterBoxRed) return;
         if (activeCharacter === 'yellow') {
@@ -786,10 +789,10 @@ export default function Home() {
 
             }
         }
-
-        console.log('UPDATE ON START');
     }, [activeCharacter, characterBoxYellow, characterBoxGreen, characterBoxRed]);
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // CHARACTER SELECTION ANIMATION
     useEffect(() => {
 
         // DESKTOP

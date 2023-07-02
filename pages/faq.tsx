@@ -171,6 +171,7 @@ export default function FaqPage() {
     const [currentQuestions, setCurrentQuestions] = useState<FaqQuestion[]>(faqQuestions[0].questions);
     const [currentTitle, setCurrentTitle] = useState<FaqTitleObj>(faqTitles[0].title);
 
+    // CHANGE OF QUESTIONS BY TOPICS
     useEffect(() => {
         const questions = faqQuestions.find(el => {
             return el.id === currentSection;
@@ -188,7 +189,7 @@ export default function FaqPage() {
 
     }, [currentSection]);
 
-    // TOGGLE EVENT
+    // TOGGLE QUESTION DESCRIPTION EVENT
     const toggleEvent = (event: React.MouseEvent): void => {
         const target = event.target as HTMLElement;
         const parent = target?.closest('.toggle-container');

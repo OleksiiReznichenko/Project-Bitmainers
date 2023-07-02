@@ -1,8 +1,7 @@
-import { baseActions, selectMobileNavOpenedIndicator } from '@/store/base';
+import { selectMobileNavOpenedIndicator } from '@/store/base';
 import classes from '@/styles/componentsStyles/navigationMenu.module.scss';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 export default function NavigationMenu() {

@@ -1,7 +1,6 @@
 import { baseActions, selectMobileNavOpenedIndicator } from '@/store/base';
 import classes from '@/styles/componentsStyles/navigation.module.scss';
 import Link from 'next/link';
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -11,6 +10,7 @@ export default function Navigation() {
 
     const toggleButtonClasses = 'mobile ' + classes['toggle-menu-button'] + ' ' + (mobileNavOpenedIndicator ? classes['active'] : '');
 
+    // TOGGLE MOBILE MENU
     const toggleNavMenu = (): void => {
         dispatch(baseActions.toggleMobileNavOpenedIndicator());
     };

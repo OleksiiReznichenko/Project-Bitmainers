@@ -3,6 +3,11 @@ import baseSliceReducer from './base';
 import slideFunctionsReducer from './slideFunctions';
 import { createWrapper } from "next-redux-wrapper";
 
+export const isTouchDevice = (): boolean => {
+  return (('ontouchstart' in window) ||  
+    (navigator.maxTouchPoints > 0));
+}
+
 const makeStore = () =>
   configureStore({
     reducer: {

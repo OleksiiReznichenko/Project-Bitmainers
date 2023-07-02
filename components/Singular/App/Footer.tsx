@@ -1,5 +1,4 @@
 import classes from '@/styles/componentsStyles/footer.module.scss';
-import Image from 'next/image';
 import Link from 'next/link';
 
 
