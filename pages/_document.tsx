@@ -18,19 +18,19 @@ export default function Document() {
           engaging gameplay, and exclusive NFT collections. Start playing now!" />
 
         <meta property="og:type" content="website" />
-        {/* <meta property="og:url" content="https://gallery.heavens.pro/projects/bitmainers/" /> */}
+        <meta property="og:url" content="https://ton.blackhole.gg/" />
         <meta property="og:title" content="TonMiners - Next-Gen NFT Game on TON Blockchain" />
         <meta property="og:description" 
           content="Join TonMiners, a unique NFT game on TON Blockchain! Experience mining, daily rewards, 
           engaging gameplay, and exclusive NFT collections. Start playing now!" />
-        {/* <meta property="og:image" content="https://gallery.heavens.pro/projects/bitmainers/seoImage.png" /> */}
+        <meta property="og:image" content="https://ton.blackhole.gg/seoImage.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="TonMiners - Next-Gen NFT Game on TON Blockchain" />
         <meta property="twitter:description"
           content="Join TonMiners, a unique NFT game on TON Blockchain! Experience mining, daily rewards, 
           engaging gameplay, and exclusive NFT collections. Start playing now!" />
-        {/* <meta property="twitter:image" content="https://gallery.heavens.pro/projects/bitmainers/seoImage.png" /> */}
+        <meta property="twitter:image" content="https://ton.blackhole.gg/seoImage.png" />
 
 
         {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
