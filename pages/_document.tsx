@@ -23,14 +23,14 @@ export default function Document() {
         <meta property="og:description" 
           content="Join TonMiners, a unique NFT game on TON Blockchain! Experience mining, daily rewards, 
           engaging gameplay, and exclusive NFT collections. Start playing now!" />
-        <meta property="og:image" content="https://ton.blackhole.gg/seoImage.png" />
+        <meta property="og:image" content="https://ton.blackhole.gg/seoImage.jpg" />
 
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:title" content="TonMiners - Next-Gen NFT Game on TON Blockchain" />
         <meta property="twitter:description"
           content="Join TonMiners, a unique NFT game on TON Blockchain! Experience mining, daily rewards, 
           engaging gameplay, and exclusive NFT collections. Start playing now!" />
-        <meta property="twitter:image" content="https://ton.blackhole.gg/seoImage.png" />
+        <meta property="twitter:image" content="https://ton.blackhole.gg/seoImage.jpg" />
 
 
         {/* <link rel="preconnect" href="https://fonts.googleapis.com" />
